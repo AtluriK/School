@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn & Practice: &lt;head&gt; Tag</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    header h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .teaching {
+      background: #e9f7ef;
+      padding: 1.5rem;
+      border-left: 5px solid #2ecc71;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tip-box {
+      background: #fff3cd;
+      padding: 1.5rem;
+      border-left: 5px solid #ffc107;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .task {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.task:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+    h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.2rem;
+    }
+
+    .checkmark {
+      font-size: 1.5rem;
+      color: green;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: monospace;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .buttons {
+      margin-top: 0.8rem;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      margin-right: 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover:not(:disabled) {
+      background: #45a049;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .code-output {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    #completion-section {
+      display: none;
+      background: #dff0d8;
+      padding: 1.5rem;
+      border-left: 5px solid #3c763d;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center; 
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
+  <header>
+    <h1>Learning Tag: &lt;head&gt;</h1>
+  </header>
+
+  <main>
+    <!-- Theory Section -->
+    <section class="teaching">
+      <h2>Theory: &lt;head&gt; Tag</h2>
+      <p>
+        The <code>&lt;head&gt;</code> tag is a container element placed inside the <code>&lt;html&gt;</code> tag. It holds metadata and other information that is not displayed directly on the web page but is essential for how the browser understands, processes, and renders the document.
+      </p>
+      <h3>Additional Notes:</h3>
+      <ul>
+        <li>The <code>&lt;head&gt;</code> tag typically comes right after the opening <code>&lt;html&gt;</code> tag and before the <code>&lt;body&gt;</code> tag.</li>
+        <li>Contents inside <code>&lt;head&gt;</code> may include <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code> tags, <code>&lt;link&gt;</code> tags (for stylesheets), <code>&lt;style&gt;</code>, and <code>&lt;script&gt;</code> tags.</li>
+        <li>Information within the <code>&lt;head&gt;</code> affects page behavior, SEO, accessibility, responsiveness, and styling but is not visible to the user.</li>
+        <li>The <code>&lt;head&gt;</code> tag helps browsers understand how to interpret the content in the <code>&lt;body&gt;</code>.</li>
+        <li>Every HTML document should have exactly one <code>&lt;head&gt;</code> section.</li>
+      </ul>
+
+      <h3>Examples:</h3>
+      <ol>
+        <li><code>&lt;head&gt;&lt;/head&gt;</code> — Basic usage with no content.</li>
+        <li><code>&lt;head&gt;&lt;title&gt;My Webpage&lt;/title&gt;&lt;/head&gt;</code> — Includes a title tag.</li>
+        <li><code>&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;/head&gt;</code> — Defines character encoding.</li>
+        <li><code>&lt;head&gt;&lt;meta name="description" content="A sample page"&gt;&lt;/head&gt;</code> — Metadata for SEO.</li>
+        <li><code>&lt;head&gt;&lt;link rel="stylesheet" href="style.css"&gt;&lt;/head&gt;</code> — Links external CSS file.</li>
+        <li><code>&lt;head&gt;&lt;style&gt;body {background: lightgray;}&lt;/style&gt;&lt;/head&gt;</code> — Internal CSS.</li>
+        <li><code>&lt;head&gt;&lt;script&gt;console.log('Hello');&lt;/script&gt;&lt;/head&gt;</code> — JavaScript inside head.</li>
+      </ol>
+    </section>
+
+    <!-- Tip Section -->
+    <div class="tip-box">
+      💡 <strong>Tip:</strong> Type each task manually to boost memory and understanding. Right-click, copy, paste, and cut are disabled to help you practice effectively.
+    </div>
+
+    <!-- Task Section -->
+    <section id="tasks-container"></section>
+
+    <!-- Completion Section -->
+    <div id="completion-section">
+      <h3>🎉 You've completed all 30 tasks!</h3>
+      <p>Your XP: <span id="total-xp">0</span></p>
+      <button onclick="goToNextTag()">Go to Next Tag</button>
+      <br /><br />
+      <p><strong>Reset Password:</strong> <code>resetHEAD123</code></p>
+      <input type="text" id="reset-password" placeholder="Enter reset password" />
+      <button onclick="resetProgress()">Reset Progress</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Currently Learning: &lt;head&gt; Tag</p>
+  </footer>
+
+  <script>
+    
+    const tasks = [
+  {
+    "instruction": "Create a head section and include a title for your page.",
+    "example": "<head><title>My First Page</title></head>"
+  },
+  {
+    "instruction": "Write a head section with a one-word title.",
+    "example": "<head><title>Welcome</title></head>"
+  },
+  {
+    "instruction": "Add a title with your name inside the head section.",
+    "example": "<head><title>Clever Mind's Site</title></head>"
+  },
+  {
+    "instruction": "Add a title with today’s date inside the head section.",
+    "example": "<head><title>2025-08-08</title></head>"
+  },
+  {
+    "instruction": "Use the head section with a short sentence as a title.",
+    "example": "<head><title>This is my webpage</title></head>"
+  },
+  {
+    "instruction": "Use the head section with a title that contains a number.",
+    "example": "<head><title>Page 1</title></head>"
+  },
+  {
+    "instruction": "Add a funny phrase as a title inside the head section.",
+    "example": "<head><title>Oops! Wrong tab?</title></head>"
+  },
+  {
+    "instruction": "Create a head section with a title that describes your hobby.",
+    "example": "<head><title>Playing Games</title></head>"
+  },
+  {
+    "instruction": "Use a short quote inside the title element.",
+    "example": "<head><title>Keep it simple</title></head>"
+  },
+  {
+    "instruction": "Write your favorite word as a title inside the head section.",
+    "example": "<head><title>Joy</title></head>"
+  },
+  {
+    "instruction": "Write a head section with an empty title.",
+    "example": "<head><title></title></head>"
+  },
+  {
+    "instruction": "Add a title using only capital letters.",
+    "example": "<head><title>WELCOME</title></head>"
+  },
+  {
+    "instruction": "Add a title using only lowercase letters.",
+    "example": "<head><title>my webpage</title></head>"
+  },
+  {
+    "instruction": "Add a comment above the title element inside the head section.",
+    "example": "<head><!-- Page title goes here --><title>My Page</title></head>"
+  },
+  {
+    "instruction": "Use the head section and add a title about the topic you are learning.",
+    "example": "<head><title>Learning HTML</title></head>"
+  },
+  {
+    "instruction": "Write a head section with a title that includes special characters.",
+    "example": "<head><title>HTML & You!</title></head>"
+  },
+  {
+    "instruction": "Use a single emotion word as the title.",
+    "example": "<head><title>Happy</title></head>"
+  },
+  {
+    "instruction": "Add a comment with the word 'head' before the head section.",
+    "example": "<!-- This is the head section --><head><title>My Site</title></head>"
+  },
+  {
+    "instruction": "Use the head section to add your birth year as the title.",
+    "example": "<head><title>Born in 2025</title></head>"
+  },
+  {
+    "instruction": "Use the head section with a title that mentions your country.",
+    "example": "<head><title>India</title></head>"
+  },
+  {
+    "instruction": "Use the head section and include your favorite food as the title.",
+    "example": "<head><title>Pizza</title></head>"
+  },
+  {
+    "instruction": "Use the head section with a title that says ‘Hello World’.",
+    "example": "<head><title>Hello World</title></head>"
+  },
+  {
+    "instruction": "Add a title that includes both words and a number.",
+    "example": "<head><title>Chapter 3</title></head>"
+  },
+  {
+    "instruction": "Create a head section with a title written in your native language.",
+    "example": "<head><title>Namastey</title></head>"
+  },
+  {
+    "instruction": "Use the title element to write a made-up word.",
+    "example": "<head><title>Zigglepop</title></head>"
+  },
+  {
+    "instruction": "Write the title element on separate lines (for formatting practice).",
+    "example": "<head>\n<title>\nMy Page\n</title>\n</head>"
+  },
+  {
+    "instruction": "Use the head section to create a title that looks like a file name.",
+    "example": "<head><title>index.html</title></head>"
+  },
+  {
+    "instruction": "Write a head section with a title that includes an emoji.",
+    "example": "<head><title>:-) HTML Book</title></head>"
+  },
+  {
+    "instruction": "Use the head section with a title that says 'Under Construction'.",
+    "example": "<head><title>Under Construction</title></head>"
+  },
+  {
+    "instruction": "Add a creative title showing the name of a place.",
+    "example": "<head><title>Mount Everest</title></head>"
+  }
+];
+
+   const tag = "head"; // ✅ used to namespace localStorage keys
+const totalTasks = tasks.length;
+let xp = parseInt(localStorage.getItem(`${tag}XP`) || "0");
+const taskContainer = document.getElementById("tasks-container");
+
+function escapeHTML(str) {
+  return str.replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+}
+
+function updateGlobalProgress() {
+  const allDone = Array.from({ length: totalTasks }, (_, i) => localStorage.getItem(`${tag}TaskDone${i}`) === "true");
+  const isTagComplete = allDone.every(Boolean);
+
+  let savedProgress = JSON.parse(localStorage.getItem(`${tag}Progress`)) || {};
+  if (isTagComplete && !savedProgress[tag]) {
+    savedProgress[tag] = true;
+    savedProgress.xp = (savedProgress.xp || 0) + 10;
+  }
+  savedProgress[`${tag}_tasks`] = allDone;
+  localStorage.setItem(`${tag}Progress`, JSON.stringify(savedProgress));
+}
+
+function renderTasks() {
+  tasks.forEach((task, index) => {
+    const savedCode = localStorage.getItem(`${tag}Task${index}`) || "";
+    const isComplete = localStorage.getItem(`${tag}TaskDone${index}`);
+
+    const div = document.createElement("div");
+    div.className = "task";
+    div.id = `task-${index}`;
+    if (index > 0 && !localStorage.getItem(`${tag}TaskDone${index - 1}`)) {
+      div.classList.add("hidden");
+    }
+
+    const trimmedCode = savedCode ? savedCode.trim() : "";
+
+    div.innerHTML = `
+      <h3>Task ${index + 1} <span class="checkmark" id="check-${index}">${isComplete ? "✅" : ""}</span></h3>
+      <p><strong>Instruction:</strong> ${task.instruction}</p>
+      <p><strong>Example:</strong> <code>${escapeHTML(task.example)}</code></p>
+      <textarea rows="3" 
+                id="input-${index}" 
+                placeholder="Type your code manually..." 
+                ${isComplete ? "disabled" : ""}
+                onpaste="return false;" 
+                oncopy="return false;" 
+                oncut="return false;" 
+                oncontextmenu="return false;">${trimmedCode}</textarea>
+      <div class="buttons">
+        <button onclick="runCode(${index})" id="run-${index}" ${isComplete ? "disabled" : ""}>Run</button>
+        <button onclick="submitCode(${index})" id="submit-${index}" disabled data-ready="false">Submit</button>
+      </div>
+      <pre class="code-output" id="output-${index}">${isComplete ? savedCode : ""}</pre>
+    `;
+
+    taskContainer.appendChild(div);
+
+    const inputField = div.querySelector("textarea");
+    ["paste", "copy", "cut", "contextmenu"].forEach(evt => {
+      inputField.addEventListener(evt, e => {
+        e.preventDefault();
+        alert("❌ Action disabled! Please type your code manually.");
+      });
+    });
+    inputField.addEventListener("keydown", e => {
+      if (e.ctrlKey && ["c", "v", "x"].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+        alert("❌ Ctrl+C/V/X are disabled! Please type manually.");
+      }
+    });
+
+    if (isComplete) {
+      const nextTask = document.getElementById(`task-${index + 1}`);
+      if (nextTask) nextTask.classList.remove("hidden");
+    }
+  });
+
+  if (localStorage.getItem(`${tag}TaskDone${tasks.length - 1}`)) {
+    document.getElementById("completion-section").style.display = "block";
+  }
+  document.getElementById("total-xp").textContent = xp; // ✅ fixed incorrect backtick quote
+}
+
+function runCode(index) {
+  const input = document.getElementById(`input-${index}`).value.trim();
+  const expected = tasks[index].example.replace(/\s+/g, '').toLowerCase();
+  const userInput = input.replace(/\s+/g, '').toLowerCase();
+  const outputBox = document.getElementById(`output-${index}`);
+  const submitBtn = document.getElementById(`submit-${index}`);
+
+  if (userInput === expected) {
+    outputBox.textContent = input;
+    submitBtn.disabled = false;
+    submitBtn.dataset.ready = "true";
+  } else {
+    submitBtn.disabled = true;
+    submitBtn.dataset.ready = "false";
+    outputBox.textContent = "";
+    alert(`❌ Incorrect!\nYour input must match the example exactly.\nExpected: ${tasks[index].example}`);
+  }
+}
+
+function submitCode(index) {
+  const submitBtn = document.getElementById(`submit-${index}`);
+  if (submitBtn.dataset.ready !== "true") {
+    alert("⚠️ You must click 'Run' first and match the example exactly before submitting.");
+    return;
+  }
+
+  const code = document.getElementById(`input-${index}`).value.trim();
+  localStorage.setItem(`${tag}Task${index}`, code);
+  localStorage.setItem(`${tag}TaskDone${index}`, true);
+  xp++;
+  localStorage.setItem(`${tag}XP`, xp);
+
+  document.getElementById(`input-${index}`).disabled = true;
+  document.getElementById(`submit-${index}`).disabled = true;
+  document.getElementById(`run-${index}`).disabled = true;
+  document.getElementById(`check-${index}`).textContent = "✅";
+
+  const nextTask = document.getElementById(`task-${index + 1}`);
+  if (nextTask) nextTask.classList.remove("hidden");
+  else document.getElementById("completion-section").style.display = "block";
+
+  document.getElementById("total-xp").textContent = xp;
+  updateGlobalProgress();
+}
+
+function goToNextTag() {
+  const confirmNext = confirm("✅ Are you sure you want to proceed to the next tag?");
+  if (confirmNext) {
+    alert("✨ Moving to the next tag module!");
+    window.location.href = "title.html";
+  }
+}
+
+function resetProgress() {
+  const pw = document.getElementById("reset-password").value;
+  if (pw === "resetHEAD123") {
+    const confirmReset = confirm("⚠️ Are you sure you want to reset your progress? This cannot be undone.");
+    if (!confirmReset) return;
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith(tag)) localStorage.removeItem(key);
+    });
+    location.reload();
+  } else {
+    alert("Wrong password! Reset denied.");
+  }
+}
+
+window.onload = renderTasks;
+
+
+    // Prevent copy-paste and show alert
+      const inputField = div.querySelector("textarea");
+      const tipMsg = "\u274C Copy-paste is disabled! Please type your code manually.\n\u{1F4A1} Tip: Typing code helps you build memory and accuracy.That's why all shortcuts and pasting are disabled. Enjoy learning!";
+
+      inputField.addEventListener("paste", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("copy", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("cut", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("contextmenu", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("keydown", e => {
+        if (e.ctrlKey && ["c", "v", "x"].includes(e.key.toLowerCase())) {
+          e.preventDefault();
+          alert("\u274C Please type your code manually.");
+        }
+      });
+
+      const tasksContainer = document.getElementById('tasks-container');
+    for (let i = 1; i <= 3; i++) {
+      const div = document.createElement('div');
+      div.className = 'task';
+      div.innerHTML = `
+        <h3>Task ${i} <span class="checkmark">✔️</span></h3>
+        <p>Type a sample &lt;html&gt; element manually:</p>
+        <textarea rows="3"></textarea>
+        <div class="buttons">
+          <button>Check</button>
+          <button>Reset</button>
+        </div>
+        <div class="code-output">Your code will appear here...</div>
+      `;
+      tasksContainer.appendChild(div);
+    }
+
+  </script>
+
+</body>
+</html>

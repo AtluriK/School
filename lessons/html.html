@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn & Practice: &lt;html&gt; Tag</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    header h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .teaching {
+      background: #e9f7ef;
+      padding: 1.5rem;
+      border-left: 5px solid #2ecc71;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tip-box {
+      background: #fff3cd;
+      padding: 1.5rem;
+      border-left: 5px solid #ffc107;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .task {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.task:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+    h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.2rem;
+    }
+
+    .checkmark {
+      font-size: 1.5rem;
+      color: green;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: monospace;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .buttons {
+      margin-top: 0.8rem;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      margin-right: 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover:not(:disabled) {
+      background: #45a049;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .code-output {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    #completion-section {
+      display: none;
+      background: #dff0d8;
+      padding: 1.5rem;
+      border-left: 5px solid #3c763d;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center; 
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
+  <header>
+    <h1>Learning Tag: &lt;html&gt;</h1>
+  </header>
+
+  <main>
+    <!-- Theory Section -->
+    <section class="teaching">
+      <h2>Theory: &lt;html&gt; Tag</h2>
+      <p>
+        The <code>&lt;html&gt;</code> tag is the root of every HTML document. It wraps all the
+        content on the entire page, including the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>
+        sections. Without the <code>&lt;html&gt;</code> tag, a browser won't understand the content
+        as a proper HTML document.
+      </p>
+      <h3>Additional Notes:</h3>
+      <ul>
+        <li>Use the <code>lang</code> attribute to specify the document's language (e.g., <code>&lt;html lang="en"&gt;</code>).</li>
+        <li>The <code>&lt;html&gt;</code> tag must wrap everything in your HTML file except the <code>&lt;!DOCTYPE html&gt;</code>.</li>
+        <li>Browsers expect a valid HTML structure starting from <code>&lt;!DOCTYPE&gt;</code> and followed by <code>&lt;html&gt;</code>.</li>
+      </ul>
+      <h3>Examples:</h3>
+      <ol>
+        <li><code>&lt;html&gt;&lt;/html&gt;</code> — Minimal tag.</li>
+        <li><code>&lt;html lang="en"&gt;&lt;/html&gt;</code> — Tag with language attribute.</li>
+        <li>
+          <code>
+            &lt;!DOCTYPE html&gt;<br />
+            &lt;html&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;&lt;/head&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;&lt;/body&gt;<br />
+            &lt;/html&gt;
+          </code>
+        </li>
+        <li>
+          Incorrect nesting:<br /><code>&lt;html&gt;&lt;body&gt;&lt;/html&gt;&lt;/body&gt;</code><br />
+          This is incorrect because <code>&lt;/html&gt;</code> must be the last tag.
+        </li>
+        <li>
+          Using <code>lang</code> for non-English language:<br /><code>&lt;html lang="fr"&gt;</code>
+        </li>
+        <li>
+          Including metadata inside an <code>&lt;html&gt;</code>:<br /><code>&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;/head&gt;&lt;/html&gt;</code>
+        </li>
+        <li>
+          Nested inside DOCTYPE for full page structure.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Tip Section -->
+    <div class="tip-box">
+      💡 <strong>Tip:</strong> Typing your code manually helps improve your memory and accuracy. All copy, paste, and right-click actions are disabled. Try to type everything yourself!
+    </div>
+
+    <!-- Task Section (JS will inject here) -->
+    <section id="tasks-container"></section>
+
+    
+    <!-- Completion Message -->
+    <div id="completion-section">
+      <h3>🎉 You've completed all 30 tasks!</h3>
+      <p>Your XP: <span id="total-xp">0</span></p>
+      <button onclick="goToNextTag()">Go to Next Tag</button>
+      <br /><br />
+      <p><strong>Reset Password:</strong> <code>resetHTML123</code></p>
+      <input type="text" id="reset-password" placeholder="Enter reset password" />
+      <button onclick="resetProgress()">Reset Progress</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Currently Learning: &lt;html&gt; Tag</p>
+  </footer>
+
+  <script>
+
+    
+    const tasks = [
+  {
+    "instruction": "Type a basic <html> tag to start your HTML document.",
+    "example": "<html></html>"
+  },
+  {
+    "instruction": "Add a lang attribute to your <html> tag set to English.",
+    "example": "<html lang=\"en\"></html>"
+  },
+  {
+    "instruction": "Set the lang attribute to Hindi in your <html> tag.",
+    "example": "<html lang=\"hi\"></html>"
+  },
+  {
+    "instruction": "Use the <html> tag with a comment explaining its purpose.",
+    "example": "<!-- This is the root element of HTML -->\n<html></html>"
+  },
+  {
+    "instruction": "Create a simple <html> tag and write your name inside.",
+    "example": "<html>My name is Clever</html>"
+  },
+  {
+    "instruction": "Add a lang attribute using a 2-letter country code for Spanish.",
+    "example": "<html lang=\"es\"></html>"
+  },
+  {
+    "instruction": "Create an <html> tag with your favorite number inside.",
+    "example": "<html>42</html>"
+  },
+  {
+    "instruction": "Write a <html> tag using all capital letters.",
+    "example": "<HTML></HTML>"
+  },
+  {
+    "instruction": "Use a single-line comment above the <html> tag.",
+    "example": "<!-- HTML root element -->\n<html></html>"
+  },
+  {
+    "instruction": "Use <html> tag and describe the document in 3 words inside.",
+    "example": "<html>Simple HTML page</html>"
+  },
+  {
+    "instruction": "Add a line break before and after the <html> tag.",
+    "example": "\n<html>\n</html>\n"
+  },
+  {
+    "instruction": "Use <html> tag and wrap any short sentence inside.",
+    "example": "<html>This is basic</html>"
+  },
+  {
+    "instruction": "Wrap symbols like @#$% inside <html> tag.",
+    "example": "<html>@#$%</html>"
+  },
+  {
+    "instruction": "Add a lang attribute with a wrong code, then correct it.",
+    "example": "<html lang=\"english\"></html> // Wrong\n<html lang=\"en\"></html> // Correct"
+  },
+  {
+    "instruction": "Comment above <html> tag stating it begins the page.",
+    "example": "<!-- Start of the page -->\n<html></html>"
+  },
+  {
+    "instruction": "Create a <html> tag and mention your city inside.",
+    "example": "<html>Delhi</html>"
+  },
+  {
+    "instruction": "Add a number inside <html> tag with a lang attribute.",
+    "example": "<html lang=\"fr\">100</html>"
+  },
+  {
+    "instruction": "Use tab indentation before writing <html> tag.",
+    "example": "\t<html>\n\t</html>"
+  },
+  {
+    "instruction": "Use a line of dashes above the <html> tag to separate sections.",
+    "example": "<!-- --------------------- -->\n<html></html>"
+  },
+  {
+    "instruction": "Write a small quote or phrase inside <html> tag.",
+    "example": "<html>Practice makes perfect</html>"
+  },
+  {
+    "instruction": "Use <html> and wrap today’s date inside.",
+    "example": "<html>2025-08-07</html>"
+  },
+  {
+    "instruction": "Set lang attribute to 'de' (German) in your <html> tag.",
+    "example": "<html lang=\"de\"></html>"
+  },
+  {
+    "instruction": "Write <html> tag with your favorite word inside.",
+    "example": "<html>Creativity</html>"
+  },
+  {
+    "instruction": "Add a blank line above and below your <html> tag.",
+    "example": "\n<html></html>\n"
+  },
+  {
+    "instruction": "Use <html> to wrap a combination of text and number.",
+    "example": "<html>Item 7</html>"
+  },
+  {
+    "instruction": "Write your initials inside <html> tag.",
+    "example": "<html>PA</html>"
+  },
+  {
+    "instruction": "Comment with your favorite color before the <html> tag.",
+    "example": "<!-- Favorite color: Blue -->\n<html></html>"
+  },
+  {
+    "instruction": "Use <html> tag and describe yourself in 2–3 words.",
+    "example": "<html>Curious learner</html>"
+  },
+  {
+    "instruction": "Use <html> to type a random word from your day.",
+    "example": "<html>Notebook</html>"
+  },
+  {
+    "instruction": "Add the DOCTYPE line above your <html> tag.",
+    "example": "<!DOCTYPE html>\n<html></html>"
+  }
+];
+
+    const tag = "html"; // ✅ used to namespace localStorage keys
+const totalTasks = tasks.length;
+let xp = parseInt(localStorage.getItem(`${tag}XP`) || "0");
+const taskContainer = document.getElementById("tasks-container");
+
+function escapeHTML(str) {
+  return str.replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+}
+
+function updateGlobalProgress() {
+  const allDone = Array.from({ length: totalTasks }, (_, i) => localStorage.getItem(`${tag}TaskDone${i}`) === "true");
+  const isTagComplete = allDone.every(Boolean);
+
+  let savedProgress = JSON.parse(localStorage.getItem(`${tag}Progress`)) || {};
+  if (isTagComplete && !savedProgress[tag]) {
+    savedProgress[tag] = true;
+    savedProgress.xp = (savedProgress.xp || 0) + 10;
+  }
+  savedProgress[`${tag}_tasks`] = allDone;
+  localStorage.setItem(`${tag}Progress`, JSON.stringify(savedProgress));
+}
+
+function renderTasks() {
+  tasks.forEach((task, index) => {
+    const savedCode = localStorage.getItem(`${tag}Task${index}`) || "";
+    const isComplete = localStorage.getItem(`${tag}TaskDone${index}`);
+
+    const div = document.createElement("div");
+    div.className = "task";
+    div.id = `task-${index}`;
+    if (index > 0 && !localStorage.getItem(`${tag}TaskDone${index - 1}`)) {
+      div.classList.add("hidden");
+    }
+
+    const trimmedCode = savedCode ? savedCode.trim() : "";
+
+    div.innerHTML = `
+      <h3>Task ${index + 1} <span class="checkmark" id="check-${index}">${isComplete ? "✅" : ""}</span></h3>
+      <p><strong>Instruction:</strong> ${task.instruction}</p>
+      <p><strong>Example:</strong> <code>${escapeHTML(task.example)}</code></p>
+      <textarea rows="3" 
+                id="input-${index}" 
+                placeholder="Type your code manually..." 
+                ${isComplete ? "disabled" : ""}
+                onpaste="return false;" 
+                oncopy="return false;" 
+                oncut="return false;" 
+                oncontextmenu="return false;">${trimmedCode}</textarea>
+      <div class="buttons">
+        <button onclick="runCode(${index})" id="run-${index}" ${isComplete ? "disabled" : ""}>Run</button>
+        <button onclick="submitCode(${index})" id="submit-${index}" disabled data-ready="false">Submit</button>
+      </div>
+      <pre class="code-output" id="output-${index}">${isComplete ? savedCode : ""}</pre>
+    `;
+
+    taskContainer.appendChild(div);
+
+    const inputField = div.querySelector("textarea");
+    ["paste", "copy", "cut", "contextmenu"].forEach(evt => {
+      inputField.addEventListener(evt, e => {
+        e.preventDefault();
+        alert("❌ Action disabled! Please type your code manually.");
+      });
+    });
+    inputField.addEventListener("keydown", e => {
+      if (e.ctrlKey && ["c", "v", "x"].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+        alert("❌ Ctrl+C/V/X are disabled! Please type manually.");
+      }
+    });
+
+    if (isComplete) {
+      const nextTask = document.getElementById(`task-${index + 1}`);
+      if (nextTask) nextTask.classList.remove("hidden");
+    }
+  });
+
+  if (localStorage.getItem(`${tag}TaskDone${tasks.length - 1}`)) {
+    document.getElementById("completion-section").style.display = "block";
+  }
+  document.getElementById("total-xp").textContent = xp; // ✅ fixed incorrect backtick quote
+}
+
+function runCode(index) {
+  const input = document.getElementById(`input-${index}`).value.trim();
+  const expected = tasks[index].example.replace(/\s+/g, '').toLowerCase();
+  const userInput = input.replace(/\s+/g, '').toLowerCase();
+  const outputBox = document.getElementById(`output-${index}`);
+  const submitBtn = document.getElementById(`submit-${index}`);
+
+  if (userInput === expected) {
+    outputBox.textContent = input;
+    submitBtn.disabled = false;
+    submitBtn.dataset.ready = "true";
+  } else {
+    submitBtn.disabled = true;
+    submitBtn.dataset.ready = "false";
+    outputBox.textContent = "";
+    alert(`❌ Incorrect!\nYour input must match the example exactly.\nExpected: ${tasks[index].example}`);
+  }
+}
+
+function submitCode(index) {
+  const submitBtn = document.getElementById(`submit-${index}`);
+  if (submitBtn.dataset.ready !== "true") {
+    alert("⚠️ You must click 'Run' first and match the example exactly before submitting.");
+    return;
+  }
+
+  const code = document.getElementById(`input-${index}`).value.trim();
+  localStorage.setItem(`${tag}Task${index}`, code);
+  localStorage.setItem(`${tag}TaskDone${index}`, true);
+  xp++;
+  localStorage.setItem(`${tag}XP`, xp);
+
+  document.getElementById(`input-${index}`).disabled = true;
+  document.getElementById(`submit-${index}`).disabled = true;
+  document.getElementById(`run-${index}`).disabled = true;
+  document.getElementById(`check-${index}`).textContent = "✅";
+
+  const nextTask = document.getElementById(`task-${index + 1}`);
+  if (nextTask) nextTask.classList.remove("hidden");
+  else document.getElementById("completion-section").style.display = "block";
+
+  document.getElementById("total-xp").textContent = xp;
+  updateGlobalProgress();
+}
+
+function goToNextTag() {
+  const confirmNext = confirm("✅ Are you sure you want to proceed to the next tag?");
+  if (confirmNext) {
+    alert("✨ Moving to the next tag module!");
+    window.location.href = "title.html";
+  }
+}
+
+function resetProgress() {
+  const pw = document.getElementById("reset-password").value;
+  if (pw === "resetHEAD123") {
+    const confirmReset = confirm("⚠️ Are you sure you want to reset your progress? This cannot be undone.");
+    if (!confirmReset) return;
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith(tag)) localStorage.removeItem(key);
+    });
+    location.reload();
+  } else {
+    alert("Wrong password! Reset denied.");
+  }
+}
+
+window.onload = renderTasks;
+
+
+    // Prevent copy-paste and show alert
+      const inputField = div.querySelector("textarea");
+      const tipMsg = "\u274C Copy-paste is disabled! Please type your code manually.\n\u{1F4A1} Tip: Typing code helps you build memory and accuracy.That's why all shortcuts and pasting are disabled. Enjoy learning!";
+
+      inputField.addEventListener("paste", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("copy", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("cut", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("contextmenu", e => {
+        e.preventDefault();
+        alert("\u274C Please type your code manually.");
+      });
+      inputField.addEventListener("keydown", e => {
+        if (e.ctrlKey && ["c", "v", "x"].includes(e.key.toLowerCase())) {
+          e.preventDefault();
+          alert("\u274C Please type your code manually.");
+        }
+      });
+
+      const tasksContainer = document.getElementById('tasks-container');
+    for (let i = 1; i <= 3; i++) {
+      const div = document.createElement('div');
+      div.className = 'task';
+      div.innerHTML = `
+        <h3>Task ${i} <span class="checkmark">✔️</span></h3>
+        <p>Type a sample &lt;html&gt; element manually:</p>
+        <textarea rows="3"></textarea>
+        <div class="buttons">
+          <button>Check</button>
+          <button>Reset</button>
+        </div>
+        <div class="code-output">Your code will appear here...</div>
+      `;
+      tasksContainer.appendChild(div);
+    }
+
+  </script>
+
+</body>
+</html>
