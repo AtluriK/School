@@ -50,6 +50,7 @@ header p.subtitle {
 
 /* Lesson Card */
 #lesson-container {
+  display: none;
   align-self: center;
   width: 90%;
   max-width: 90%;
