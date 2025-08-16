@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TypeScript Learning</title>
+  <link rel="stylesheet" href="../commonsindex/commonindex.css">
+</head>
+<body>
+
+<main>
+
+  <header>
+    <h1>Welcome to Command Line Learning</h1>
+    <p class="subtitle">Your beginner-friendly guide to mastering the command line step-by-step</p>
+  </header>
+
+  <!-- Intro + Detailed Tutorial (Theory only, no categories) -->
+  <section class="teaching" aria-label="Complete Introduction to Command Line">
+
+    <h2>Complete Introduction to Command Line</h2>
+
+    <h3>1. What is the Command Line?</h3>
+    <p>
+      The Command Line, also known as the Terminal, Shell, or Console, is a text-based interface used to interact with your computer’s operating system. Instead of clicking icons or buttons, you type commands to perform tasks like navigating files, running programs, and managing system settings.
+    </p>
+    <p>
+      It provides powerful control and automation capabilities, often faster and more efficient than graphical interfaces.
+    </p>
+
+    <h3>2. Why Use the Command Line?</h3>
+    <ul>
+      <li><strong>Speed and Efficiency:</strong> Perform complex tasks quickly with commands and scripts.</li>
+      <li><strong>Remote Access:</strong> Manage servers and computers over networks.</li>
+      <li><strong>Automation:</strong> Write scripts to automate repetitive tasks.</li>
+      <li><strong>Developer Essential:</strong> Many programming and development tools rely on the command line.</li>
+      <li><strong>Full Control:</strong> Access powerful tools and settings not always available in graphical interfaces.</li>
+    </ul>
+
+    <h3>3. Basic Components of the Command Line</h3>
+    <ul>
+      <li><strong>Prompt:</strong> The text that appears, indicating the command line is ready for input (e.g., <code>$</code> or <code>C:\></code>).</li>
+      <li><strong>Command:</strong> Instructions you type (like <code>cd</code>, <code>ls</code>, <code>mkdir</code>).</li>
+      <li><strong>Arguments:</strong> Extra information passed to commands (e.g., filenames, directories).</li>
+      <li><strong>Options/Flags:</strong> Modify command behavior (usually start with <code>-</code> or <code>--</code>).</li>
+      <li><strong>Output:</strong> The text the command returns, showing results or errors.</li>
+    </ul>
+
+    <h3>4. Opening the Command Line Interface</h3>
+    <p>
+      How you open the command line depends on your operating system:
+    </p>
+    <ul>
+      <li><strong>Windows:</strong> Use "Command Prompt" or "PowerShell". Search for these in the Start menu or press <code>Win + R</code> and type <code>cmd</code>.</li>
+      <li><strong>macOS:</strong> Use "Terminal" app found in Applications > Utilities.</li>
+      <li><strong>Linux:</strong> Most distributions have a Terminal app accessible via the applications menu or <code>Ctrl + Alt + T</code>.</li>
+    </ul>
+
+    <h3>5. Basic Command Line Navigation</h3>
+    <p>Common commands to move around the filesystem:</p>
+    <ul>
+      <li><code>pwd</code> (print working directory): Shows your current directory path.</li>
+      <li><code>ls</code> (list): Lists files and folders in the current directory. On Windows, use <code>dir</code>.</li>
+      <li><code>cd [directory]</code> (change directory): Moves into the specified directory. Use <code>cd ..</code> to go up one level.</li>
+    </ul>
+
+    <h3>6. Creating, Moving, and Deleting Files and Folders</h3>
+    <ul>
+      <li><code>mkdir [folder-name]</code>: Create a new directory.</li>
+      <li><code>touch [file-name]</code>: Create a new empty file (Linux/macOS). On Windows, use <code>type nul > filename</code> or <code>echo. > filename</code>.</li>
+      <li><code>mv [source] [destination]</code>: Move or rename files and folders.</li>
+      <li><code>cp [source] [destination]</code>: Copy files or directories.</li>
+      <li><code>rm [file]</code>: Delete a file (<code>rm -r [folder]</code> to delete folders recursively).</li>
+      <li><code>del [file]</code>: Delete files on Windows.</li>
+      <li><code>rmdir [folder]</code>: Remove empty folders on Windows; use <code>rm -r</code> on Linux/macOS for non-empty folders.</li>
+    </ul>
+
+    <h3>7. Viewing File Contents</h3>
+    <ul>
+      <li><code>cat [file]</code>: Display the contents of a file.</li>
+      <li><code>less [file]</code>: View large files page-by-page.</li>
+      <li><code>head [file]</code>: Show the first few lines of a file.</li>
+      <li><code>tail [file]</code>: Show the last few lines of a file.</li>
+    </ul>
+
+    <h3>8. Using Command Line Options and Flags</h3>
+    <p>
+      Many commands accept options or flags to modify their behavior. They usually start with one or two dashes:
+    </p>
+    <ul>
+      <li>Single dash and letter: <code>ls -l</code> (long listing format)</li>
+      <li>Double dash and word: <code>grep --ignore-case</code></li>
+    </ul>
+    <p>Learn the options for commands you use most frequently to make your work more efficient.</p>
+
+    <h3>9. Command Line Shortcuts and Autocomplete</h3>
+    <ul>
+      <li><strong>Tab completion:</strong> Press <kbd>Tab</kbd> to autocomplete commands and filenames.</li>
+      <li><strong>Arrow keys:</strong> Use up/down arrows to cycle through previous commands.</li>
+      <li><strong>Ctrl + C:</strong> Cancel the current command.</li>
+      <li><strong>Ctrl + L:</strong> Clear the screen.</li>
+    </ul>
+
+    <h3>10. Environment Variables</h3>
+    <p>
+      Environment variables store important information that programs can use, like your home directory or system paths.
+    </p>
+    <ul>
+      <li>View all environment variables with <code>env</code> or <code>printenv</code> (Linux/macOS), and <code>set</code> on Windows.</li>
+      <li>Access variables like <code>$HOME</code> (Linux/macOS) or <code>%USERPROFILE%</code> (Windows).</li>
+      <li>Modify or add environment variables to customize your command line experience.</li>
+    </ul>
+
+    <h3>11. Writing Simple Shell Scripts</h3>
+    <p>
+      You can automate tasks by writing scripts — text files with a series of commands.
+    </p>
+    <p>Example (Linux/macOS, saved as <code>hello.sh</code>):</p>
+    <pre><code>#!/bin/bash
+echo "Hello, world!"</code></pre>
+    <p>Make it executable with <code>chmod +x hello.sh</code> and run with <code>./hello.sh</code>.</p>
+    <p>Windows has batch files (<code>.bat</code>) and PowerShell scripts (<code>.ps1</code>).</p>
+
+    <h3>12. File Permissions Basics</h3>
+    <p>
+      On Linux/macOS, files and folders have permissions controlling who can read, write, or execute them.
+    </p>
+    <ul>
+      <li>Use <code>ls -l</code> to view permissions.</li>
+      <li>Change permissions with <code>chmod</code>.</li>
+      <li>Users and groups control access, important for security.</li>
+    </ul>
+
+    <h3>13. Command Line Tools and Utilities</h3>
+    <p>
+      The command line has many powerful built-in tools:
+    </p>
+    <ul>
+      <li><code>grep</code>: Search text using patterns.</li>
+      <li><code>find</code>: Find files and directories.</li>
+      <li><code>tar</code>, <code>zip</code>: Compress and archive files.</li>
+      <li><code>ssh</code>: Connect securely to remote computers.</li>
+      <li><code>top</code>, <code>htop</code>: Monitor system processes and resources.</li>
+    </ul>
+    <p>Learning these tools helps you work efficiently on the command line.</p>
+
+    <h3>14. Safety Tips When Using the Command Line</h3>
+    <ul>
+      <li>Be careful with commands like <code>rm</code> and <code>sudo</code> — they can delete important files or change system settings.</li>
+      <li>Double-check commands before running them.</li>
+      <li>Keep backups of important data.</li>
+    </ul>
+
+    <h3>15. Resources to Learn More</h3>
+    <ul>
+      <li><a href="https://linuxcommand.org/" target="_blank" rel="noopener">Linux Command</a> — beginner tutorials</li>
+      <li><a href="https://ss64.com/" target="_blank" rel="noopener">SS64</a> — comprehensive command references</li>
+      <li><a href="https://explainshell.com/" target="_blank" rel="noopener">ExplainShell</a> — breaks down command syntax</li>
+      <li>Try online terminals like <a href="https://www.webminal.org/" target="_blank" rel="noopener">Webminal</a> or <a href="https://www.tutorialspoint.com/execute_bash_online.php" target="_blank" rel="noopener">TutorialsPoint</a>.</li>
+      <li>Practice regularly — command line skills improve with use.</li>
+    </ul>
+
+    <h3>Summary</h3>
+    <p>
+      The command line is a powerful tool that lets you control your computer quickly and efficiently through text commands.<br>
+      This introduction covered its basic concepts, common commands, navigation, scripting, and essential tips.<br>
+      Mastering the command line opens up new opportunities for development, system administration, and automation.<br>
+      Keep practicing to build confidence and speed.<br>
+      Welcome to your command line journey!
+    </p>
+
+  </section>
+
+
+
+
+
+<!-- TypeScript Categories (Learning Order) -->
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 Command Line Learning. All rights reserved.
+  </footer>
+
+  
+<script src="../commonsindex/commonindex.js"></script>
+  
+</body>
+</html>

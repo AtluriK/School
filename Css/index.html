@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Learning</title>
+  <link rel="stylesheet" href="../commonsindex/commonindex.css">
+</head>
+<body>
+
+<main>
+
+  <header>
+    <h1>Welcome to CSS Learning</h1>
+    <p class="subtitle">Your beginner-friendly guide to mastering CSS step-by-step</p>
+  </header>
+
+  <!-- Intro + Detailed Tutorial (Theory only, no categories) -->
+  <section class="teaching" aria-label="Complete Introduction to CSS">
+
+    <h2>Complete Introduction to CSS</h2>
+
+    <h3>1. What is CSS?</h3>
+    <p>
+      CSS stands for <strong>Cascading Style Sheets</strong>. It is a stylesheet language used to control the visual presentation of web pages written in HTML. While HTML structures content, CSS tells the browser how that content should look — such as colors, fonts, spacing, layout, and responsiveness.
+    </p>
+    <p>
+      CSS makes websites more engaging and readable by separating content from design. This separation also makes maintaining websites easier, as styles are managed in one place rather than mixed with HTML content.
+    </p>
+
+    <h3>2. How Does CSS Fit Into the Web?</h3>
+    <p>
+      When you open a web page, the browser loads the HTML to build the page structure. Then, it applies the CSS to style the elements, and finally runs any JavaScript to add interactivity.
+    </p>
+    <ul>
+      <li><strong>HTML:</strong> Defines the page's content and structure, such as headings, paragraphs, images, and links.</li>
+      <li><strong>CSS:</strong> Defines the style rules that specify how the HTML elements should look, including colors, fonts, and layout.</li>
+      <li><strong>JavaScript:</strong> Adds behaviors and dynamic functionality, like responding to clicks or fetching data.</li>
+      <li><strong>Browser:</strong> Combines all these to render the final web page you see.</li>
+    </ul>
+    <p>
+      Without CSS, web pages would be plain, unstyled text and images. CSS adds the "beauty" to the web.
+    </p>
+
+    <h3>3. Why Learn CSS?</h3>
+    <p>Learning CSS unlocks several important advantages:</p>
+    <ul>
+      <li><strong>Design Control:</strong> You can customize the appearance of websites exactly how you want them to look.</li>
+      <li><strong>Responsive Layouts:</strong> CSS enables sites to adjust automatically for different devices like phones, tablets, and desktops.</li>
+      <li><strong>Career Opportunities:</strong> CSS is a core skill for front-end developers, web designers, UI/UX designers, and digital marketers.</li>
+      <li><strong>Creativity:</strong> Experiment with colors, fonts, animations, and layouts to create unique user experiences.</li>
+      <li><strong>Improved Collaboration:</strong> Understanding CSS helps you communicate clearly with designers and developers.</li>
+    </ul>
+
+    <h3>4. Who Should Learn CSS?</h3>
+    <p>CSS is valuable for:</p>
+    <ul>
+      <li>Web developers building user-friendly and visually appealing websites.</li>
+      <li>Designers interested in how their creations become functional webpages.</li>
+      <li>Content creators who want greater control over their website's look.</li>
+      <li>Beginners starting their journey in web development and design.</li>
+      <li>Anyone curious about how web pages are styled and laid out.</li>
+    </ul>
+
+    <h3>5. Basic Syntax of CSS</h3>
+    <p>CSS consists of <strong>rules</strong> made up of:</p>
+    <ul>
+      <li><strong>Selectors:</strong> Indicate which HTML elements the rule applies to.</li>
+      <li><strong>Declarations:</strong> Inside curly braces <code>{ }</code>, containing one or more <strong>property: value</strong> pairs.</li>
+    </ul>
+    <p>Example:</p>
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+      <div class="example-container" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+        <code>
+          h1 {<br>
+          &nbsp;&nbsp;color: #1e3a8a;<br>
+          &nbsp;&nbsp;font-family: Arial, sans-serif;<br>
+          &nbsp;&nbsp;text-align: center;<br>
+          }<br><br>
+          p {<br>
+          &nbsp;&nbsp;color: #333;<br>
+          &nbsp;&nbsp;font-size: 16px;<br>
+          &nbsp;&nbsp;line-height: 1.5;<br>
+          }
+        </code>
+      </div>
+      <div class="example-output" aria-label="Rendered CSS output" style="flex: 1; background: #fff; padding: 1rem; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); font-family: Arial, sans-serif; color: #111; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 160px;">
+        <h1 style="color: #1e3a8a; font-family: Arial, sans-serif; text-align: center; margin: 0;">Hello CSS</h1>
+        <p style="color: #333; font-size: 16px; line-height: 1.5; margin: 0;">This paragraph is styled with CSS properties.</p>
+      </div>
+    </div>
+    <p><strong>Explanation:</strong></p>
+    <ul>
+      <li><code>h1</code> and <code>p</code> select the HTML elements to style.</li>
+      <li>Each declaration inside <code>{ }</code> sets CSS properties with values.</li>
+      <li>Properties like <code>color</code>, <code>font-family</code>, and <code>font-size</code> define the element's appearance.</li>
+    </ul>
+
+    <h3>6. Common CSS Selectors</h3>
+    <p>Selectors tell CSS which elements to style. Common types include:</p>
+    <ul>
+      <li><strong>Type Selector:</strong> Targets elements by tag name, e.g., <code>p</code>, <code>h1</code>.</li>
+      <li><strong>Class Selector:</strong> Targets elements with a specific class attribute. Use a dot <code>.</code> before the class name, e.g., <code>.button</code>.</li>
+      <li><strong>ID Selector:</strong> Targets a unique element with an ID attribute. Use a hash <code>#</code> before the ID name, e.g., <code>#header</code>.</li>
+      <li><strong>Universal Selector:</strong> Targets all elements, using <code>*</code>.</li>
+      <li><strong>Attribute Selector:</strong> Targets elements with specific attributes, e.g., <code>[type="text"]</code>.</li>
+      <li><strong>Descendant Selector:</strong> Targets elements inside other elements, e.g., <code>nav a</code> selects links inside navigation.</li>
+    </ul>
+
+    <h3>7. The CSS Box Model</h3>
+    <p>Every HTML element is a rectangular box composed of four parts:</p>
+    <ul>
+      <li><strong>Content:</strong> The actual text, image, or media inside the element.</li>
+      <li><strong>Padding:</strong> Space between the content and the border, inside the element.</li>
+      <li><strong>Border:</strong> A line surrounding the padding (optional).</li>
+      <li><strong>Margin:</strong> Space outside the border, separating elements from each other.</li>
+    </ul>
+    <p>Understanding the box model is crucial for controlling spacing and layout.</p>
+
+    <h3>8. How to Add CSS to Your HTML</h3>
+    <p>You can apply CSS in three main ways:</p>
+    <ul>
+      <li><strong>Inline CSS:</strong> Add the <code>style</code> attribute directly on an HTML tag.<br>
+        Example: <code>&lt;p style="color: red;"&gt;Red text&lt;/p&gt;</code><br>
+        <em>Not recommended for large projects because it mixes content with design.</em>
+      </li>
+      <li><strong>Internal CSS:</strong> Write CSS rules inside a <code>&lt;style&gt;</code> tag in the HTML <code>&lt;head&gt;</code> section.<br>
+        This keeps CSS separate but only applies to that single HTML file.</li>
+      <li><strong>External CSS:</strong> Link an external <code>.css</code> file in the HTML <code>&lt;head&gt;</code> using <code>&lt;link&gt;</code>.<br>
+        This is the best practice for most projects, as one CSS file can style many HTML pages.</li>
+    </ul>
+
+    <h3>9. CSS Specificity and Inheritance</h3>
+    <p>
+      When multiple CSS rules target the same element, the browser decides which rule to apply based on <strong>specificity</strong>. Specificity is like a score calculated from selectors used:
+    </p>
+    <ul>
+      <li>Inline styles have the highest specificity.</li>
+      <li>ID selectors are more specific than class selectors.</li>
+      <li>Class selectors are more specific than type selectors.</li>
+      <li>The rule with higher specificity overrides others.</li>
+    </ul>
+    <p>
+      <strong>Inheritance</strong> means some CSS properties applied to a parent element automatically apply to its children. For example, if you set <code>color: blue;</code> on a <code>&lt;div&gt;</code>, its text and child elements will inherit that color unless overridden.
+    </p>
+
+    <h3>10. CSS Comments</h3>
+    <p>
+      Comments let you add notes or explanations in your CSS code. They are ignored by browsers and are helpful for documentation or reminders.
+    </p>
+    <p>
+      Syntax:
+    </p>
+    <pre><code>/* This is a CSS comment */</code></pre>
+
+    <h3>11. Responsive Design Basics</h3>
+    <p>
+      Responsive design ensures your website looks good on all devices — phones, tablets, and desktops. CSS helps by:
+    </p>
+    <ul>
+      <li>Using flexible units like percentages (%), <code>em</code>, and <code>rem</code> instead of fixed pixels.</li>
+      <li>Applying <strong>media queries</strong> to change styles based on screen width.<br>
+        Example:
+        <pre><code>@media (max-width: 600px) {<br>
+          body {<br>
+            background-color: lightgray;<br>
+          }<br>
+        }</code></pre>
+      </li>
+      <li>Using modern layout techniques like Flexbox and CSS Grid to create flexible layouts.</li>
+    </ul>
+
+    <h3>12. How CSS Works with HTML and JavaScript</h3>
+    <ul>
+      <li>HTML structures the page content.</li>
+      <li>CSS styles that content to create visually appealing layouts and designs.</li>
+      <li>JavaScript can change CSS dynamically — for example, show/hide elements, animate transitions, or change styles based on user input.</li>
+      <li>Together, they build modern interactive websites.</li>
+    </ul>
+
+    <h3>13. Tools and Resources to Learn CSS</h3>
+    <ul>
+      <li><strong>Code Editors:</strong> Visual Studio Code, Sublime Text, Atom, or even Notepad++</li>
+      <li><strong>Online Playgrounds:</strong> CodePen, JSFiddle, and JSBin allow you to write and test CSS in the browser.</li>
+      <li><strong>Documentation:</strong> MDN Web Docs (developer.mozilla.org) offers detailed CSS references and tutorials.</li>
+      <li><strong>Practice Projects:</strong> Build simple portfolios, landing pages, or redesign existing websites.</li>
+      <li><strong>Browser Developer Tools:</strong> All modern browsers have built-in tools to inspect and experiment with CSS live.</li>
+    </ul>
+
+    <h3>14. Advantages and Career Benefits of Learning CSS</h3>
+    <ul>
+      <li>Create professional, attractive, and responsive websites that users love.</li>
+      <li>Essential skill for front-end developers, UI/UX designers, and web designers.</li>
+      <li>Better communication with developers and designers.</li>
+      <li>Enhance your creativity and problem-solving skills by experimenting with design.</li>
+      <li>Open up career opportunities in web development, digital marketing, and more.</li>
+    </ul>
+
+    <h3>Summary</h3>
+    <p>
+      CSS is a powerful language that controls the look and feel of websites. Mastering it allows you to turn plain HTML content into beautiful, responsive, and user-friendly web pages.<br>
+      This guide covered fundamental CSS concepts, syntax, selectors, the box model, specificity, responsive design, and practical tips.<br>
+      Keep practicing by writing CSS rules, experimenting with layouts, and using developer tools.<br>
+      Your journey to becoming a skilled web designer or front-end developer starts here!<br>
+      Let’s style the web together.
+    </p>
+
+  </section>
+
+
+
+
+<!-- CSS Categories (Learning Order) -->
+
+<!-- Category 1 -->
+<section class="accordion" aria-label="CSS Fundamentals">
+  <div class="accordion-item" id="cat-1">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-1" data-target="content-1">
+      <span class="number">1.</span>
+      <span class="title">CSS Fundamentals</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-1" role="region" aria-labelledby="cat-1">
+
+      <!-- Subcategory 1.1 -->
+      <a href="c1/css-syntax-basics.html" class="lesson-link" tabindex="0">
+        <span class="number">1.1</span> CSS syntax basics: Rule set selector { property: value; }
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.2 -->
+      <a href="c1/css-comments.html" class="lesson-link" tabindex="0">
+        <span class="number">1.2</span> Comments: /* comment */
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.3 -->
+      <a href="c1/css-inline.html" class="lesson-link" tabindex="0">
+        <span class="number">1.3</span> Linking CSS to HTML: Inline CSS
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.4 -->
+      <a href="c1/css-internal.html" class="lesson-link" tabindex="0">
+        <span class="number">1.4</span> Linking CSS to HTML: Internal &lt;style&gt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.5 -->
+      <a href="c1/css-external.html" class="lesson-link" tabindex="0">
+        <span class="number">1.5</span> Linking CSS to HTML: External .css file
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 2 -->
+<section class="accordion" aria-label="Basic Selectors">
+  <div class="accordion-item" id="cat-2">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-2" data-target="content-2">
+      <span class="number">2.</span>
+      <span class="title">Basic Selectors</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-2" role="region" aria-labelledby="cat-2">
+
+      <!-- Subcategory 2.1 -->
+      <a href="c2/universal-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">2.1</span> Universal selector: *
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.2 -->
+      <a href="c2/type-selector-div.html" class="lesson-link" tabindex="0">
+        <span class="number">2.2</span> Type selector (element): div
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.3 -->
+      <a href="c2/type-selector-p.html" class="lesson-link" tabindex="0">
+        <span class="number">2.3</span> Type selector (element): p
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.4 -->
+      <a href="c2/type-selector-a.html" class="lesson-link" tabindex="0">
+        <span class="number">2.4</span> Type selector (element): a
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.5 -->
+      <a href="c2/class-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">2.5</span> Class selector: .classname
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.6 -->
+      <a href="c2/id-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">2.6</span> ID selector: #idname
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.7 -->
+      <a href="c2/grouping-selector-h1.html" class="lesson-link" tabindex="0">
+        <span class="number">2.7</span> Grouping selectors: h1
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.8 -->
+      <a href="c2/grouping-selector-h2.html" class="lesson-link" tabindex="0">
+        <span class="number">2.8</span> Grouping selectors: h2
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.9 -->
+      <a href="c2/grouping-selector-p.html" class="lesson-link" tabindex="0">
+        <span class="number">2.9</span> Grouping selectors: p
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 3 -->
+<section class="accordion" aria-label="Box Model Basics">
+  <div class="accordion-item" id="cat-3">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-3" data-target="content-3">
+      <span class="number">3.</span>
+      <span class="title">Box Model Basics</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-3" role="region" aria-labelledby="cat-3">
+
+      <!-- Subcategory 3.1 -->
+      <a href="c3/width.html" class="lesson-link" tabindex="0">
+        <span class="number">3.1</span> width
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.2 -->
+      <a href="c3/height.html" class="lesson-link" tabindex="0">
+        <span class="number">3.2</span> height
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.3 -->
+      <a href="c3/margin-shorthand.html" class="lesson-link" tabindex="0">
+        <span class="number">3.3</span> margin (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.4 -->
+      <a href="c3/margin-top.html" class="lesson-link" tabindex="0">
+        <span class="number">3.4</span> margin-top
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.5 -->
+      <a href="c3/margin-right.html" class="lesson-link" tabindex="0">
+        <span class="number">3.5</span> margin-right
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.6 -->
+      <a href="c3/margin-bottom.html" class="lesson-link" tabindex="0">
+        <span class="number">3.6</span> margin-bottom
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.7 -->
+      <a href="c3/margin-left.html" class="lesson-link" tabindex="0">
+        <span class="number">3.7</span> margin-left
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.8 -->
+      <a href="c3/padding-shorthand.html" class="lesson-link" tabindex="0">
+        <span class="number">3.8</span> padding (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.9 -->
+      <a href="c3/padding-top.html" class="lesson-link" tabindex="0">
+        <span class="number">3.9</span> padding-top
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.10 -->
+      <a href="c3/padding-right.html" class="lesson-link" tabindex="0">
+        <span class="number">3.10</span> padding-right
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.11 -->
+      <a href="c3/padding-bottom.html" class="lesson-link" tabindex="0">
+        <span class="number">3.11</span> padding-bottom
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.12 -->
+      <a href="c3/padding-left.html" class="lesson-link" tabindex="0">
+        <span class="number">3.12</span> padding-left
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.13 -->
+      <a href="c3/border-shorthand.html" class="lesson-link" tabindex="0">
+        <span class="number">3.13</span> border (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.14 -->
+      <a href="c3/border-width.html" class="lesson-link" tabindex="0">
+        <span class="number">3.14</span> border-width
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.15 -->
+      <a href="c3/border-style.html" class="lesson-link" tabindex="0">
+        <span class="number">3.15</span> border-style
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.16 -->
+      <a href="c3/border-color.html" class="lesson-link" tabindex="0">
+        <span class="number">3.16</span> border-color
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.17 -->
+      <a href="c3/box-sizing.html" class="lesson-link" tabindex="0">
+        <span class="number">3.17</span> box-sizing
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 4 -->
+<section class="accordion" aria-label="Text & Color Basics">
+  <div class="accordion-item" id="cat-4">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-4" data-target="content-4">
+      <span class="number">4.</span>
+      <span class="title">Text & Color Basics</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-4" role="region" aria-labelledby="cat-4">
+
+      <!-- Subcategory 4.1 -->
+      <a href="c4/color.html" class="lesson-link" tabindex="0">
+        <span class="number">4.1</span> color
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.2 -->
+      <a href="c4/background-color.html" class="lesson-link" tabindex="0">
+        <span class="number">4.2</span> background-color
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.3 -->
+      <a href="c4/font-family.html" class="lesson-link" tabindex="0">
+        <span class="number">4.3</span> font-family
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.4 -->
+      <a href="c4/font-size.html" class="lesson-link" tabindex="0">
+        <span class="number">4.4</span> font-size
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.5 -->
+      <a href="c4/font-weight.html" class="lesson-link" tabindex="0">
+        <span class="number">4.5</span> font-weight
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.6 -->
+      <a href="c4/text-align.html" class="lesson-link" tabindex="0">
+        <span class="number">4.6</span> text-align
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.7 -->
+      <a href="c4/line-height.html" class="lesson-link" tabindex="0">
+        <span class="number">4.7</span> line-height
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.8 -->
+      <a href="c4/text-decoration.html" class="lesson-link" tabindex="0">
+        <span class="number">4.8</span> text-decoration
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.9 -->
+      <a href="c4/letter-spacing.html" class="lesson-link" tabindex="0">
+        <span class="number">4.9</span> letter-spacing
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.10 -->
+      <a href="c4/word-spacing.html" class="lesson-link" tabindex="0">
+        <span class="number">4.10</span> word-spacing
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 5 -->
+<section class="accordion" aria-label="Attribute Selectors">
+  <div class="accordion-item" id="cat-5">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-5" data-target="content-5">
+      <span class="number">5.</span>
+      <span class="title">Attribute Selectors</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-5" role="region" aria-labelledby="cat-5">
+
+      <!-- Subcategory 5.1 -->
+      <a href="c5/attribute-presence.html" class="lesson-link" tabindex="0">
+        <span class="number">5.1</span> Attribute presence selector: [attr]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.2 -->
+      <a href="c5/attribute-exact-value.html" class="lesson-link" tabindex="0">
+        <span class="number">5.2</span> Attribute exact value: [attr=value]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.3 -->
+      <a href="c5/attribute-contains-word.html" class="lesson-link" tabindex="0">
+        <span class="number">5.3</span> Attribute contains word: [attr~=value]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.4 -->
+      <a href="c5/attribute-starts-with-prefix.html" class="lesson-link" tabindex="0">
+        <span class="number">5.4</span> Attribute starts with prefix: [attr|=value]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.5 -->
+      <a href="c5/attribute-starts-with.html" class="lesson-link" tabindex="0">
+        <span class="number">5.5</span> Attribute starts with: [attr^=value]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.6 -->
+      <a href="c5/attribute-ends-with.html" class="lesson-link" tabindex="0">
+        <span class="number">5.6</span> Attribute ends with: [attr$=value]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.7 -->
+      <a href="c5/attribute-contains-substring.html" class="lesson-link" tabindex="0">
+        <span class="number">5.7</span> Attribute contains substring: [attr*=value]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 6 -->
+<section class="accordion" aria-label="Combinators">
+  <div class="accordion-item" id="cat-6">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-6" data-target="content-6">
+      <span class="number">6.</span>
+      <span class="title">Combinators</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-6" role="region" aria-labelledby="cat-6">
+
+      <!-- Subcategory 6.1 -->
+      <a href="c6/descendant-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">6.1</span> Descendant selector: E F
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.2 -->
+      <a href="c6/child-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">6.2</span> Child selector: E &gt; F
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.3 -->
+      <a href="c6/adjacent-sibling-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">6.3</span> Adjacent sibling selector: E + F
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.4 -->
+      <a href="c6/general-sibling-selector.html" class="lesson-link" tabindex="0">
+        <span class="number">6.4</span> General sibling selector: E ~ F
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 7 -->
+<section class="accordion" aria-label="Pseudo-classes — Basic & Structural">
+  <div class="accordion-item" id="cat-7">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-7" data-target="content-7">
+      <span class="number">7.</span>
+      <span class="title">Pseudo-classes — Basic & Structural</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-7" role="region" aria-labelledby="cat-7">
+
+      <!-- Subcategory 7.1 -->
+      <a href="c7/hover.html" class="lesson-link" tabindex="0">
+        <span class="number">7.1</span> :hover
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.2 -->
+      <a href="c7/focus.html" class="lesson-link" tabindex="0">
+        <span class="number">7.2</span> :focus
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.3 -->
+      <a href="c7/active.html" class="lesson-link" tabindex="0">
+        <span class="number">7.3</span> :active
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.4 -->
+      <a href="c7/visited.html" class="lesson-link" tabindex="0">
+        <span class="number">7.4</span> :visited
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.5 -->
+      <a href="c7/link.html" class="lesson-link" tabindex="0">
+        <span class="number">7.5</span> :link
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.6 -->
+      <a href="c7/first-child.html" class="lesson-link" tabindex="0">
+        <span class="number">7.6</span> :first-child
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.7 -->
+      <a href="c7/last-child.html" class="lesson-link" tabindex="0">
+        <span class="number">7.7</span> :last-child
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.8 -->
+      <a href="c7/nth-child.html" class="lesson-link" tabindex="0">
+        <span class="number">7.8</span> :nth-child(n)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.9 -->
+      <a href="c7/nth-last-child.html" class="lesson-link" tabindex="0">
+        <span class="number">7.9</span> :nth-last-child(n)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.10 -->
+      <a href="c7/first-of-type.html" class="lesson-link" tabindex="0">
+        <span class="number">7.10</span> :first-of-type
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.11 -->
+      <a href="c7/last-of-type.html" class="lesson-link" tabindex="0">
+        <span class="number">7.11</span> :last-of-type
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.12 -->
+      <a href="c7/nth-of-type.html" class="lesson-link" tabindex="0">
+        <span class="number">7.12</span> :nth-of-type(n)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.13 -->
+      <a href="c7/nth-last-of-type.html" class="lesson-link" tabindex="0">
+        <span class="number">7.13</span> :nth-last-of-type(n)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.14 -->
+      <a href="c7/only-child.html" class="lesson-link" tabindex="0">
+        <span class="number">7.14</span> :only-child
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.15 -->
+      <a href="c7/only-of-type.html" class="lesson-link" tabindex="0">
+        <span class="number">7.15</span> :only-of-type
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.16 -->
+      <a href="c7/empty.html" class="lesson-link" tabindex="0">
+        <span class="number">7.16</span> :empty
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 8 -->
+<section class="accordion" aria-label="Pseudo-elements — Basic">
+  <div class="accordion-item" id="cat-8">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-8" data-target="content-8">
+      <span class="number">8.</span>
+      <span class="title">Pseudo-elements — Basic</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-8" role="region" aria-labelledby="cat-8">
+
+      <!-- Subcategory 8.1 -->
+      <a href="c8/before.html" class="lesson-link" tabindex="0">
+        <span class="number">8.1</span> ::before
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.2 -->
+      <a href="c8/after.html" class="lesson-link" tabindex="0">
+        <span class="number">8.2</span> ::after
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.3 -->
+      <a href="c8/first-letter.html" class="lesson-link" tabindex="0">
+        <span class="number">8.3</span> ::first-letter
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.4 -->
+      <a href="c8/first-line.html" class="lesson-link" tabindex="0">
+        <span class="number">8.4</span> ::first-line
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 9 -->
+<section class="accordion" aria-label="Display & Positioning">
+  <div class="accordion-item" id="cat-9">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-9" data-target="content-9">
+      <span class="number">9.</span>
+      <span class="title">Display & Positioning</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-9" role="region" aria-labelledby="cat-9">
+
+      <!-- Subcategory 9.1 -->
+      <a href="c9/display-block.html" class="lesson-link" tabindex="0">
+        <span class="number">9.1</span> display: block
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.2 -->
+      <a href="c9/display-inline.html" class="lesson-link" tabindex="0">
+        <span class="number">9.2</span> display: inline
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.3 -->
+      <a href="c9/display-inline-block.html" class="lesson-link" tabindex="0">
+        <span class="number">9.3</span> display: inline-block
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.4 -->
+      <a href="c9/display-none.html" class="lesson-link" tabindex="0">
+        <span class="number">9.4</span> display: none
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.5 -->
+      <a href="c9/position-static.html" class="lesson-link" tabindex="0">
+        <span class="number">9.5</span> position: static
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.6 -->
+      <a href="c9/position-relative.html" class="lesson-link" tabindex="0">
+        <span class="number">9.6</span> position: relative
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.7 -->
+      <a href="c9/position-absolute.html" class="lesson-link" tabindex="0">
+        <span class="number">9.7</span> position: absolute
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.8 -->
+      <a href="c9/position-fixed.html" class="lesson-link" tabindex="0">
+        <span class="number">9.8</span> position: fixed
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.9 -->
+      <a href="c9/position-sticky.html" class="lesson-link" tabindex="0">
+        <span class="number">9.9</span> position: sticky
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.10 -->
+      <a href="c9/top.html" class="lesson-link" tabindex="0">
+        <span class="number">9.10</span> top
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.11 -->
+      <a href="c9/right.html" class="lesson-link" tabindex="0">
+        <span class="number">9.11</span> right
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.12 -->
+      <a href="c9/bottom.html" class="lesson-link" tabindex="0">
+        <span class="number">9.12</span> bottom
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.13 -->
+      <a href="c9/left.html" class="lesson-link" tabindex="0">
+        <span class="number">9.13</span> left
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.14 -->
+      <a href="c9/z-index.html" class="lesson-link" tabindex="0">
+        <span class="number">9.14</span> z-index
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.15 -->
+      <a href="c9/visibility.html" class="lesson-link" tabindex="0">
+        <span class="number">9.15</span> visibility
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.16 -->
+      <a href="c9/overflow.html" class="lesson-link" tabindex="0">
+        <span class="number">9.16</span> overflow
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.17 -->
+      <a href="c9/overflow-x.html" class="lesson-link" tabindex="0">
+        <span class="number">9.17</span> overflow-x
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.18 -->
+      <a href="c9/overflow-y.html" class="lesson-link" tabindex="0">
+        <span class="number">9.18</span> overflow-y
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.19 -->
+      <a href="c9/float.html" class="lesson-link" tabindex="0">
+        <span class="number">9.19</span> float
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.20 -->
+      <a href="c9/clear.html" class="lesson-link" tabindex="0">
+        <span class="number">9.20</span> clear
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 10 -->
+<section class="accordion" aria-label="Flexbox">
+  <div class="accordion-item" id="cat-10">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-10" data-target="content-10">
+      <span class="number">10.</span>
+      <span class="title">Flexbox</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-10" role="region" aria-labelledby="cat-10">
+
+      <!-- Subcategory 10.1 -->
+      <a href="c10/display-flex.html" class="lesson-link" tabindex="0">
+        <span class="number">10.1</span> display: flex
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.2 -->
+      <a href="c10/flex-direction-row.html" class="lesson-link" tabindex="0">
+        <span class="number">10.2</span> flex-direction: row
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.3 -->
+      <a href="c10/flex-direction-row-reverse.html" class="lesson-link" tabindex="0">
+        <span class="number">10.3</span> flex-direction: row-reverse
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.4 -->
+      <a href="c10/flex-direction-column.html" class="lesson-link" tabindex="0">
+        <span class="number">10.4</span> flex-direction: column
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.5 -->
+      <a href="c10/flex-direction-column-reverse.html" class="lesson-link" tabindex="0">
+        <span class="number">10.5</span> flex-direction: column-reverse
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.6 -->
+      <a href="c10/flex-wrap-nowrap.html" class="lesson-link" tabindex="0">
+        <span class="number">10.6</span> flex-wrap: nowrap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.7 -->
+      <a href="c10/flex-wrap-wrap.html" class="lesson-link" tabindex="0">
+        <span class="number">10.7</span> flex-wrap: wrap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.8 -->
+      <a href="c10/flex-wrap-wrap-reverse.html" class="lesson-link" tabindex="0">
+        <span class="number">10.8</span> flex-wrap: wrap-reverse
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.9 -->
+      <a href="c10/flex-flow.html" class="lesson-link" tabindex="0">
+        <span class="number">10.9</span> flex-flow (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.10 -->
+      <a href="c10/justify-content-flex-start.html" class="lesson-link" tabindex="0">
+        <span class="number">10.10</span> justify-content: flex-start
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.11 -->
+      <a href="c10/justify-content-flex-end.html" class="lesson-link" tabindex="0">
+        <span class="number">10.11</span> justify-content: flex-end
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.12 -->
+      <a href="c10/justify-content-center.html" class="lesson-link" tabindex="0">
+        <span class="number">10.12</span> justify-content: center
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.13 -->
+      <a href="c10/justify-content-space-between.html" class="lesson-link" tabindex="0">
+        <span class="number">10.13</span> justify-content: space-between
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.14 -->
+      <a href="c10/justify-content-space-around.html" class="lesson-link" tabindex="0">
+        <span class="number">10.14</span> justify-content: space-around
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.15 -->
+      <a href="c10/justify-content-space-evenly.html" class="lesson-link" tabindex="0">
+        <span class="number">10.15</span> justify-content: space-evenly
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.16 -->
+      <a href="c10/align-items-stretch.html" class="lesson-link" tabindex="0">
+        <span class="number">10.16</span> align-items: stretch
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.17 -->
+      <a href="c10/align-items-flex-start.html" class="lesson-link" tabindex="0">
+        <span class="number">10.17</span> align-items: flex-start
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.18 -->
+      <a href="c10/align-items-flex-end.html" class="lesson-link" tabindex="0">
+        <span class="number">10.18</span> align-items: flex-end
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.19 -->
+      <a href="c10/align-items-center.html" class="lesson-link" tabindex="0">
+        <span class="number">10.19</span> align-items: center
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.20 -->
+      <a href="c10/align-items-baseline.html" class="lesson-link" tabindex="0">
+        <span class="number">10.20</span> align-items: baseline
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.21 -->
+      <a href="c10/align-content-stretch.html" class="lesson-link" tabindex="0">
+        <span class="number">10.21</span> align-content: stretch
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.22 -->
+      <a href="c10/align-content-flex-start.html" class="lesson-link" tabindex="0">
+        <span class="number">10.22</span> align-content: flex-start
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.23 -->
+      <a href="c10/align-content-flex-end.html" class="lesson-link" tabindex="0">
+        <span class="number">10.23</span> align-content: flex-end
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.24 -->
+      <a href="c10/align-content-center.html" class="lesson-link" tabindex="0">
+        <span class="number">10.24</span> align-content: center
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.25 -->
+      <a href="c10/align-content-space-between.html" class="lesson-link" tabindex="0">
+        <span class="number">10.25</span> align-content: space-between
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.26 -->
+      <a href="c10/align-content-space-around.html" class="lesson-link" tabindex="0">
+        <span class="number">10.26</span> align-content: space-around
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.27 -->
+      <a href="c10/order.html" class="lesson-link" tabindex="0">
+        <span class="number">10.27</span> order
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.28 -->
+      <a href="c10/flex-grow.html" class="lesson-link" tabindex="0">
+        <span class="number">10.28</span> flex-grow
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.29 -->
+      <a href="c10/flex-shrink.html" class="lesson-link" tabindex="0">
+        <span class="number">10.29</span> flex-shrink
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.30 -->
+      <a href="c10/flex-basis.html" class="lesson-link" tabindex="0">
+        <span class="number">10.30</span> flex-basis
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.31 -->
+      <a href="c10/align-self.html" class="lesson-link" tabindex="0">
+        <span class="number">10.31</span> align-self
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 11 -->
+<section class="accordion" aria-label="Grid">
+  <div class="accordion-item" id="cat-11">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-11" data-target="content-11">
+      <span class="number">11.</span>
+      <span class="title">Grid</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-11" role="region" aria-labelledby="cat-11">
+
+      <!-- Subcategory 11.1 -->
+      <a href="c11/display-grid.html" class="lesson-link" tabindex="0">
+        <span class="number">11.1</span> display: grid
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.2 -->
+      <a href="c11/grid-template-columns.html" class="lesson-link" tabindex="0">
+        <span class="number">11.2</span> grid-template-columns
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.3 -->
+      <a href="c11/grid-template-rows.html" class="lesson-link" tabindex="0">
+        <span class="number">11.3</span> grid-template-rows
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.4 -->
+      <a href="c11/grid-template-areas.html" class="lesson-link" tabindex="0">
+        <span class="number">11.4</span> grid-template-areas
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.5 -->
+      <a href="c11/grid-template.html" class="lesson-link" tabindex="0">
+        <span class="number">11.5</span> grid-template
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.6 -->
+      <a href="c11/grid-column.html" class="lesson-link" tabindex="0">
+        <span class="number">11.6</span> grid-column
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.7 -->
+      <a href="c11/grid-column-start.html" class="lesson-link" tabindex="0">
+        <span class="number">11.7</span> grid-column-start
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.8 -->
+      <a href="c11/grid-column-end.html" class="lesson-link" tabindex="0">
+        <span class="number">11.8</span> grid-column-end
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.9 -->
+      <a href="c11/grid-row.html" class="lesson-link" tabindex="0">
+        <span class="number">11.9</span> grid-row
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.10 -->
+      <a href="c11/grid-row-start.html" class="lesson-link" tabindex="0">
+        <span class="number">11.10</span> grid-row-start
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.11 -->
+      <a href="c11/grid-row-end.html" class="lesson-link" tabindex="0">
+        <span class="number">11.11</span> grid-row-end
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.12 -->
+      <a href="c11/grid-area.html" class="lesson-link" tabindex="0">
+        <span class="number">11.12</span> grid-area
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.13 -->
+      <a href="c11/grid-auto-columns.html" class="lesson-link" tabindex="0">
+        <span class="number">11.13</span> grid-auto-columns
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.14 -->
+      <a href="c11/grid-auto-rows.html" class="lesson-link" tabindex="0">
+        <span class="number">11.14</span> grid-auto-rows
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.15 -->
+      <a href="c11/grid-auto-flow.html" class="lesson-link" tabindex="0">
+        <span class="number">11.15</span> grid-auto-flow
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.16 -->
+      <a href="c11/gap.html" class="lesson-link" tabindex="0">
+        <span class="number">11.16</span> gap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.17 -->
+      <a href="c11/row-gap.html" class="lesson-link" tabindex="0">
+        <span class="number">11.17</span> row-gap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.18 -->
+      <a href="c11/column-gap.html" class="lesson-link" tabindex="0">
+        <span class="number">11.18</span> column-gap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 12 -->
+<section class="accordion" aria-label="Backgrounds & Borders">
+  <div class="accordion-item" id="cat-12">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-12" data-target="content-12">
+      <span class="number">12.</span>
+      <span class="title">Backgrounds & Borders</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-12" role="region" aria-labelledby="cat-12">
+
+      <!-- Subcategory 12.1 -->
+      <a href="c12/background.html" class="lesson-link" tabindex="0">
+        <span class="number">12.1</span> background (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.2 -->
+      <a href="c12/background-image.html" class="lesson-link" tabindex="0">
+        <span class="number">12.2</span> background-image
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.3 -->
+      <a href="c12/background-position.html" class="lesson-link" tabindex="0">
+        <span class="number">12.3</span> background-position
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.4 -->
+      <a href="c12/background-repeat.html" class="lesson-link" tabindex="0">
+        <span class="number">12.4</span> background-repeat
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.5 -->
+      <a href="c12/background-size.html" class="lesson-link" tabindex="0">
+        <span class="number">12.5</span> background-size
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.6 -->
+      <a href="c12/background-attachment.html" class="lesson-link" tabindex="0">
+        <span class="number">12.6</span> background-attachment
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.7 -->
+      <a href="c12/background-clip.html" class="lesson-link" tabindex="0">
+        <span class="number">12.7</span> background-clip
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.8 -->
+      <a href="c12/background-origin.html" class="lesson-link" tabindex="0">
+        <span class="number">12.8</span> background-origin
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.9 -->
+      <a href="c12/background-blend-mode.html" class="lesson-link" tabindex="0">
+        <span class="number">12.9</span> background-blend-mode
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.10 -->
+      <a href="c12/border-collapse.html" class="lesson-link" tabindex="0">
+        <span class="number">12.10</span> border-collapse
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.11 -->
+      <a href="c12/border-spacing.html" class="lesson-link" tabindex="0">
+        <span class="number">12.11</span> border-spacing
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.12 -->
+      <a href="c12/border-radius.html" class="lesson-link" tabindex="0">
+        <span class="number">12.12</span> border-radius
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.13 -->
+      <a href="c12/box-shadow.html" class="lesson-link" tabindex="0">
+        <span class="number">12.13</span> box-shadow
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 13 -->
+<section class="accordion" aria-label="Typography">
+  <div class="accordion-item" id="cat-13">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-13" data-target="content-13">
+      <span class="number">13.</span>
+      <span class="title">Typography</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-13" role="region" aria-labelledby="cat-13">
+
+      <!-- Subcategory 13.1 -->
+      <a href="c13/font-style-normal.html" class="lesson-link" tabindex="0">
+        <span class="number">13.1</span> font-style: normal
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.2 -->
+      <a href="c13/font-style-italic.html" class="lesson-link" tabindex="0">
+        <span class="number">13.2</span> font-style: italic
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.3 -->
+      <a href="c13/font-style-oblique.html" class="lesson-link" tabindex="0">
+        <span class="number">13.3</span> font-style: oblique
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.4 -->
+      <a href="c13/font-variant.html" class="lesson-link" tabindex="0">
+        <span class="number">13.4</span> font-variant
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.5 -->
+      <a href="c13/text-transform.html" class="lesson-link" tabindex="0">
+        <span class="number">13.5</span> text-transform
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.6 -->
+      <a href="c13/text-indent.html" class="lesson-link" tabindex="0">
+        <span class="number">13.6</span> text-indent
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.7 -->
+      <a href="c13/text-shadow.html" class="lesson-link" tabindex="0">
+        <span class="number">13.7</span> text-shadow
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.8 -->
+      <a href="c13/white-space.html" class="lesson-link" tabindex="0">
+        <span class="number">13.8</span> white-space
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.9 -->
+      <a href="c13/word-break.html" class="lesson-link" tabindex="0">
+        <span class="number">13.9</span> word-break
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.10 -->
+      <a href="c13/overflow-wrap.html" class="lesson-link" tabindex="0">
+        <span class="number">13.10</span> overflow-wrap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.11 -->
+      <a href="c13/direction.html" class="lesson-link" tabindex="0">
+        <span class="number">13.11</span> direction
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.12 -->
+      <a href="c13/unicode-bidi.html" class="lesson-link" tabindex="0">
+        <span class="number">13.12</span> unicode-bidi
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.13 -->
+      <a href="c13/vertical-align.html" class="lesson-link" tabindex="0">
+        <span class="number">13.13</span> vertical-align
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.14 -->
+      <a href="c13/letter-spacing.html" class="lesson-link" tabindex="0">
+        <span class="number">13.14</span> letter-spacing
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 13.15 -->
+      <a href="c13/word-spacing.html" class="lesson-link" tabindex="0">
+        <span class="number">13.15</span> word-spacing
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 14 -->
+<section class="accordion" aria-label="List & Table Styles">
+  <div class="accordion-item" id="cat-14">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-14" data-target="content-14">
+      <span class="number">14.</span>
+      <span class="title">List & Table Styles</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-14" role="region" aria-labelledby="cat-14">
+
+      <!-- Subcategory 14.1 -->
+      <a href="c14/list-style.html" class="lesson-link" tabindex="0">
+        <span class="number">14.1</span> list-style (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 14.2 -->
+      <a href="c14/list-style-type.html" class="lesson-link" tabindex="0">
+        <span class="number">14.2</span> list-style-type
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 14.3 -->
+      <a href="c14/list-style-position.html" class="lesson-link" tabindex="0">
+        <span class="number">14.3</span> list-style-position
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 14.4 -->
+      <a href="c14/list-style-image.html" class="lesson-link" tabindex="0">
+        <span class="number">14.4</span> list-style-image
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 14.5 -->
+      <a href="c14/marker-offset.html" class="lesson-link" tabindex="0">
+        <span class="number">14.5</span> marker-offset
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 14.6 -->
+      <a href="c14/caption-side.html" class="lesson-link" tabindex="0">
+        <span class="number">14.6</span> caption-side
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 14.7 -->
+      <a href="c14/empty-cells.html" class="lesson-link" tabindex="0">
+        <span class="number">14.7</span> empty-cells
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 15 -->
+<section class="accordion" aria-label="Transforms">
+  <div class="accordion-item" id="cat-15">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-15" data-target="content-15">
+      <span class="number">15.</span>
+      <span class="title">Transforms</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-15" role="region" aria-labelledby="cat-15">
+
+      <!-- Subcategory 15.1 -->
+      <a href="c15/transform.html" class="lesson-link" tabindex="0">
+        <span class="number">15.1</span> transform
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 15.2 -->
+      <a href="c15/transform-origin.html" class="lesson-link" tabindex="0">
+        <span class="number">15.2</span> transform-origin
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 15.3 -->
+      <a href="c15/transform-style.html" class="lesson-link" tabindex="0">
+        <span class="number">15.3</span> transform-style
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 15.4 -->
+      <a href="c15/backface-visibility.html" class="lesson-link" tabindex="0">
+        <span class="number">15.4</span> backface-visibility
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 15.5 -->
+      <a href="c15/perspective.html" class="lesson-link" tabindex="0">
+        <span class="number">15.5</span> perspective
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 15.6 -->
+      <a href="c15/perspective-origin.html" class="lesson-link" tabindex="0">
+        <span class="number">15.6</span> perspective-origin
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 16 -->
+<section class="accordion" aria-label="Transitions">
+  <div class="accordion-item" id="cat-16">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-16" data-target="content-16">
+      <span class="number">16.</span>
+      <span class="title">Transitions</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-16" role="region" aria-labelledby="cat-16">
+
+      <!-- Subcategory 16.1 -->
+      <a href="c16/transition.html" class="lesson-link" tabindex="0">
+        <span class="number">16.1</span> transition (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 16.2 -->
+      <a href="c16/transition-property.html" class="lesson-link" tabindex="0">
+        <span class="number">16.2</span> transition-property
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 16.3 -->
+      <a href="c16/transition-duration.html" class="lesson-link" tabindex="0">
+        <span class="number">16.3</span> transition-duration
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 16.4 -->
+      <a href="c16/transition-timing-function.html" class="lesson-link" tabindex="0">
+        <span class="number">16.4</span> transition-timing-function
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 16.5 -->
+      <a href="c16/transition-delay.html" class="lesson-link" tabindex="0">
+        <span class="number">16.5</span> transition-delay
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 17 -->
+<section class="accordion" aria-label="Animations">
+  <div class="accordion-item" id="cat-17">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-17" data-target="content-17">
+      <span class="number">17.</span>
+      <span class="title">Animations</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-17" role="region" aria-labelledby="cat-17">
+
+      <!-- Subcategory 17.1 -->
+      <a href="c17/animation.html" class="lesson-link" tabindex="0">
+        <span class="number">17.1</span> animation (shorthand)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.2 -->
+      <a href="c17/animation-name.html" class="lesson-link" tabindex="0">
+        <span class="number">17.2</span> animation-name
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.3 -->
+      <a href="c17/animation-duration.html" class="lesson-link" tabindex="0">
+        <span class="number">17.3</span> animation-duration
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.4 -->
+      <a href="c17/animation-timing-function.html" class="lesson-link" tabindex="0">
+        <span class="number">17.4</span> animation-timing-function
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.5 -->
+      <a href="c17/animation-delay.html" class="lesson-link" tabindex="0">
+        <span class="number">17.5</span> animation-delay
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.6 -->
+      <a href="c17/animation-iteration-count.html" class="lesson-link" tabindex="0">
+        <span class="number">17.6</span> animation-iteration-count
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.7 -->
+      <a href="c17/animation-direction.html" class="lesson-link" tabindex="0">
+        <span class="number">17.7</span> animation-direction
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.8 -->
+      <a href="c17/animation-fill-mode.html" class="lesson-link" tabindex="0">
+        <span class="number">17.8</span> animation-fill-mode
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 17.9 -->
+      <a href="c17/animation-play-state.html" class="lesson-link" tabindex="0">
+        <span class="number">17.9</span> animation-play-state
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Category 18 -->
+<section class="accordion" aria-label="Pseudo-classes – Advanced">
+  <div class="accordion-item" id="cat-18">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-18" data-target="content-18">
+      <span class="number">18.</span>
+      <span class="title">Pseudo-classes – Advanced</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-18" role="region" aria-labelledby="cat-18">
+
+      <!-- Subcategory 18.1 -->
+      <a href="c18/focus-within.html" class="lesson-link" tabindex="0">
+        <span class="number">18.1</span> :focus-within
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.2 -->
+      <a href="c18/focus-visible.html" class="lesson-link" tabindex="0">
+        <span class="number">18.2</span> :focus-visible
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.3 -->
+      <a href="c18/enabled.html" class="lesson-link" tabindex="0">
+        <span class="number">18.3</span> :enabled
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.4 -->
+      <a href="c18/disabled.html" class="lesson-link" tabindex="0">
+        <span class="number">18.4</span> :disabled
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.5 -->
+      <a href="c18/checked.html" class="lesson-link" tabindex="0">
+        <span class="number">18.5</span> :checked
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.6 -->
+      <a href="c18/indeterminate.html" class="lesson-link" tabindex="0">
+        <span class="number">18.6</span> :indeterminate
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.7 -->
+      <a href="c18/root.html" class="lesson-link" tabindex="0">
+        <span class="number">18.7</span> :root
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.8 -->
+      <a href="c18/lang.html" class="lesson-link" tabindex="0">
+        <span class="number">18.8</span> :lang()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.9 -->
+      <a href="c18/not.html" class="lesson-link" tabindex="0">
+        <span class="number">18.9</span> :not()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.10 -->
+      <a href="c18/is.html" class="lesson-link" tabindex="0">
+        <span class="number">18.10</span> :is()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.11 -->
+      <a href="c18/where.html" class="lesson-link" tabindex="0">
+        <span class="number">18.11</span> :where()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 18.12 -->
+      <a href="c18/has.html" class="lesson-link" tabindex="0">
+        <span class="number">18.12</span> :has() (experimental)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 19 -->
+<section class="accordion" aria-label="Pseudo-elements – Advanced">
+  <div class="accordion-item" id="cat-19">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-19" data-target="content-19">
+      <span class="number">19.</span>
+      <span class="title">Pseudo-elements – Advanced</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-19" role="region" aria-labelledby="cat-19">
+
+      <!-- Subcategory 19.1 -->
+      <a href="c19/selection.html" class="lesson-link" tabindex="0">
+        <span class="number">19.1</span> ::selection
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 19.2 -->
+      <a href="c19/placeholder.html" class="lesson-link" tabindex="0">
+        <span class="number">19.2</span> ::placeholder
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 19.3 -->
+      <a href="c19/marker.html" class="lesson-link" tabindex="0">
+        <span class="number">19.3</span> ::marker
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 19.4 -->
+      <a href="c19/backdrop.html" class="lesson-link" tabindex="0">
+        <span class="number">19.4</span> ::backdrop
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 19.5 -->
+      <a href="c19/cue.html" class="lesson-link" tabindex="0">
+        <span class="number">19.5</span> ::cue
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 19.6 -->
+      <a href="c19/grammar-error.html" class="lesson-link" tabindex="0">
+        <span class="number">19.6</span> ::grammar-error
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 19.7 -->
+      <a href="c19/spelling-error.html" class="lesson-link" tabindex="0">
+        <span class="number">19.7</span> ::spelling-error
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 20 -->
+<section class="accordion" aria-label="CSS Variables">
+  <div class="accordion-item" id="cat-20">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-20" data-target="content-20">
+      <span class="number">20.</span>
+      <span class="title">CSS Variables</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-20" role="region" aria-labelledby="cat-20">
+
+      <!-- Subcategory 20.1 -->
+      <a href="c20/custom-properties.html" class="lesson-link" tabindex="0">
+        <span class="number">20.1</span> CSS custom properties: --variable-name
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 20.2 -->
+      <a href="c20/var-function.html" class="lesson-link" tabindex="0">
+        <span class="number">20.2</span> var() function
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 21 -->
+<section class="accordion" aria-label="CSS Functions">
+  <div class="accordion-item" id="cat-21">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-21" data-target="content-21">
+      <span class="number">21.</span>
+      <span class="title">CSS Functions</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-21" role="region" aria-labelledby="cat-21">
+
+      <!-- Subcategory 21.1 -->
+      <a href="c21/url.html" class="lesson-link" tabindex="0">
+        <span class="number">21.1</span> url()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.2 -->
+      <a href="c21/rgb.html" class="lesson-link" tabindex="0">
+        <span class="number">21.2</span> rgb()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.3 -->
+      <a href="c21/rgba.html" class="lesson-link" tabindex="0">
+        <span class="number">21.3</span> rgba()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.4 -->
+      <a href="c21/hsl.html" class="lesson-link" tabindex="0">
+        <span class="number">21.4</span> hsl()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.5 -->
+      <a href="c21/hsla.html" class="lesson-link" tabindex="0">
+        <span class="number">21.5</span> hsla()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.6 -->
+      <a href="c21/calc.html" class="lesson-link" tabindex="0">
+        <span class="number">21.6</span> calc()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.7 -->
+      <a href="c21/min.html" class="lesson-link" tabindex="0">
+        <span class="number">21.7</span> min()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.8 -->
+      <a href="c21/max.html" class="lesson-link" tabindex="0">
+        <span class="number">21.8</span> max()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.9 -->
+      <a href="c21/clamp.html" class="lesson-link" tabindex="0">
+        <span class="number">21.9</span> clamp()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.10 -->
+      <a href="c21/attr.html" class="lesson-link" tabindex="0">
+        <span class="number">21.10</span> attr()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.11 -->
+      <a href="c21/linear-gradient.html" class="lesson-link" tabindex="0">
+        <span class="number">21.11</span> linear-gradient()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.12 -->
+      <a href="c21/radial-gradient.html" class="lesson-link" tabindex="0">
+        <span class="number">21.12</span> radial-gradient()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.13 -->
+      <a href="c21/repeating-linear-gradient.html" class="lesson-link" tabindex="0">
+        <span class="number">21.13</span> repeating-linear-gradient()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.14 -->
+      <a href="c21/repeating-radial-gradient.html" class="lesson-link" tabindex="0">
+        <span class="number">21.14</span> repeating-radial-gradient()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.15 -->
+      <a href="c21/cubic-bezier.html" class="lesson-link" tabindex="0">
+        <span class="number">21.15</span> cubic-bezier()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 21.16 -->
+      <a href="c21/steps.html" class="lesson-link" tabindex="0">
+        <span class="number">21.16</span> steps()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 22 -->
+<section class="accordion" aria-label="Miscellaneous Properties">
+  <div class="accordion-item" id="cat-22">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-22" data-target="content-22">
+      <span class="number">22.</span>
+      <span class="title">Miscellaneous Properties</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-22" role="region" aria-labelledby="cat-22">
+
+      <!-- Subcategory 22.1 -->
+      <a href="c22/cursor.html" class="lesson-link" tabindex="0">
+        <span class="number">22.1</span> cursor
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.2 -->
+      <a href="c22/pointer-events.html" class="lesson-link" tabindex="0">
+        <span class="number">22.2</span> pointer-events
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.3 -->
+      <a href="c22/resize.html" class="lesson-link" tabindex="0">
+        <span class="number">22.3</span> resize
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.4 -->
+      <a href="c22/user-select.html" class="lesson-link" tabindex="0">
+        <span class="number">22.4</span> user-select
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.5 -->
+      <a href="c22/quotes.html" class="lesson-link" tabindex="0">
+        <span class="number">22.5</span> quotes
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.6 -->
+      <a href="c22/counter-reset.html" class="lesson-link" tabindex="0">
+        <span class="number">22.6</span> counter-reset
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.7 -->
+      <a href="c22/counter-increment.html" class="lesson-link" tabindex="0">
+        <span class="number">22.7</span> counter-increment
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.8 -->
+      <a href="c22/content.html" class="lesson-link" tabindex="0">
+        <span class="number">22.8</span> content
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.9 -->
+      <a href="c22/filter.html" class="lesson-link" tabindex="0">
+        <span class="number">22.9</span> filter
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.10 -->
+      <a href="c22/mix-blend-mode.html" class="lesson-link" tabindex="0">
+        <span class="number">22.10</span> mix-blend-mode
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.11 -->
+      <a href="c22/isolation.html" class="lesson-link" tabindex="0">
+        <span class="number">22.11</span> isolation
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.12 -->
+      <a href="c22/will-change.html" class="lesson-link" tabindex="0">
+        <span class="number">22.12</span> will-change
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.13 -->
+      <a href="c22/scroll-behavior.html" class="lesson-link" tabindex="0">
+        <span class="number">22.13</span> scroll-behavior
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.14 -->
+      <a href="c22/scroll-snap-type.html" class="lesson-link" tabindex="0">
+        <span class="number">22.14</span> scroll-snap-type
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.15 -->
+      <a href="c22/scroll-snap-align.html" class="lesson-link" tabindex="0">
+        <span class="number">22.15</span> scroll-snap-align
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.16 -->
+      <a href="c22/scroll-snap-stop.html" class="lesson-link" tabindex="0">
+        <span class="number">22.16</span> scroll-snap-stop
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 22.17 -->
+      <a href="c22/touch-action.html" class="lesson-link" tabindex="0">
+        <span class="number">22.17</span> touch-action
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 23 -->
+<section class="accordion" aria-label="Media Features">
+  <div class="accordion-item" id="cat-23">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-23" data-target="content-23">
+      <span class="number">23.</span>
+      <span class="title">Media Features</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-23" role="region" aria-labelledby="cat-23">
+
+      <!-- Subcategory 23.1 -->
+      <a href="c23/width.html" class="lesson-link" tabindex="0">
+        <span class="number">23.1</span> width
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.2 -->
+      <a href="c23/height.html" class="lesson-link" tabindex="0">
+        <span class="number">23.2</span> height
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.3 -->
+      <a href="c23/device-width.html" class="lesson-link" tabindex="0">
+        <span class="number">23.3</span> device-width
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.4 -->
+      <a href="c23/device-height.html" class="lesson-link" tabindex="0">
+        <span class="number">23.4</span> device-height
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.5 -->
+      <a href="c23/orientation.html" class="lesson-link" tabindex="0">
+        <span class="number">23.5</span> orientation
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.6 -->
+      <a href="c23/aspect-ratio.html" class="lesson-link" tabindex="0">
+        <span class="number">23.6</span> aspect-ratio
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.7 -->
+      <a href="c23/device-aspect-ratio.html" class="lesson-link" tabindex="0">
+        <span class="number">23.7</span> device-aspect-ratio
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.8 -->
+      <a href="c23/resolution.html" class="lesson-link" tabindex="0">
+        <span class="number">23.8</span> resolution
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.9 -->
+      <a href="c23/color.html" class="lesson-link" tabindex="0">
+        <span class="number">23.9</span> color
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.10 -->
+      <a href="c23/color-index.html" class="lesson-link" tabindex="0">
+        <span class="number">23.10</span> color-index
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.11 -->
+      <a href="c23/monochrome.html" class="lesson-link" tabindex="0">
+        <span class="number">23.11</span> monochrome
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.12 -->
+      <a href="c23/scan.html" class="lesson-link" tabindex="0">
+        <span class="number">23.12</span> scan
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.13 -->
+      <a href="c23/grid.html" class="lesson-link" tabindex="0">
+        <span class="number">23.13</span> grid
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.14 -->
+      <a href="c23/update.html" class="lesson-link" tabindex="0">
+        <span class="number">23.14</span> update
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.15 -->
+      <a href="c23/overflow-block.html" class="lesson-link" tabindex="0">
+        <span class="number">23.15</span> overflow-block
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.16 -->
+      <a href="c23/overflow-inline.html" class="lesson-link" tabindex="0">
+        <span class="number">23.16</span> overflow-inline
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.17 -->
+      <a href="c23/pointer.html" class="lesson-link" tabindex="0">
+        <span class="number">23.17</span> pointer
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.18 -->
+      <a href="c23/hover.html" class="lesson-link" tabindex="0">
+        <span class="number">23.18</span> hover
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.19 -->
+      <a href="c23/any-pointer.html" class="lesson-link" tabindex="0">
+        <span class="number">23.19</span> any-pointer
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 23.20 -->
+      <a href="c23/any-hover.html" class="lesson-link" tabindex="0">
+        <span class="number">23.20</span> any-hover
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 24 -->
+<section class="accordion" aria-label="At-rules">
+  <div class="accordion-item" id="cat-24">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-24" data-target="content-24">
+      <span class="number">24.</span>
+      <span class="title">At-rules</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-24" role="region" aria-labelledby="cat-24">
+
+      <!-- Subcategory 24.1 -->
+      <a href="c24/import.html" class="lesson-link" tabindex="0">
+        <span class="number">24.1</span> @import
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.2 -->
+      <a href="c24/media.html" class="lesson-link" tabindex="0">
+        <span class="number">24.2</span> @media
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.3 -->
+      <a href="c24/supports.html" class="lesson-link" tabindex="0">
+        <span class="number">24.3</span> @supports
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.4 -->
+      <a href="c24/font-face.html" class="lesson-link" tabindex="0">
+        <span class="number">24.4</span> @font-face
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.5 -->
+      <a href="c24/keyframes.html" class="lesson-link" tabindex="0">
+        <span class="number">24.5</span> @keyframes
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.6 -->
+      <a href="c24/page.html" class="lesson-link" tabindex="0">
+        <span class="number">24.6</span> @page
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.7 -->
+      <a href="c24/namespace.html" class="lesson-link" tabindex="0">
+        <span class="number">24.7</span> @namespace
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.8 -->
+      <a href="c24/counter-style.html" class="lesson-link" tabindex="0">
+        <span class="number">24.8</span> @counter-style
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.9 -->
+      <a href="c24/layer.html" class="lesson-link" tabindex="0">
+        <span class="number">24.9</span> @layer
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.10 -->
+      <a href="c24/property.html" class="lesson-link" tabindex="0">
+        <span class="number">24.10</span> @property
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.11 -->
+      <a href="c24/color-profile.html" class="lesson-link" tabindex="0">
+        <span class="number">24.11</span> @color-profile
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.12 -->
+      <a href="c24/viewport.html" class="lesson-link" tabindex="0">
+        <span class="number">24.12</span> @viewport
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.13 -->
+      <a href="c24/document.html" class="lesson-link" tabindex="0">
+        <span class="number">24.13</span> @document (deprecated)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 24.14 -->
+      <a href="c24/scope.html" class="lesson-link" tabindex="0">
+        <span class="number">24.14</span> @scope (experimental)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 CSS Learning. All rights reserved.
+  </footer>
+
+  
+<script src="../commonsindex/commonindex.js"></script>
+  
+</body>
+</html>

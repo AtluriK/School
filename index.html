@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kuch Tho Seekho</title>
+  <style>
+    /* Base from your CSS */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fefefe;
+      margin: 0;
+      padding: 2rem 1rem;
+      color: #222;
+      line-height: 1.5;
+      font-size: 1.15rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto 3rem;
+      width: 100%;
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+    header h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.03em;
+    }
+    header p.subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+
+    /* Common styles */
+#main-title {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade */
+.fade-out { opacity: 0; }
+.fade-in { opacity: 1; }
+
+/* Slide */
+.slide-out { transform: translateX(-100%); opacity: 0; }
+.slide-in { transform: translateX(0); opacity: 1; }
+
+/* Zoom */
+.zoom-out { transform: scale(0.5); opacity: 0; }
+.zoom-in { transform: scale(1); opacity: 1; }
+
+/* Rotate */
+.rotate-out { transform: rotateY(90deg); opacity: 0; }
+.rotate-in { transform: rotateY(0deg); opacity: 1; }
+
+/* Flip */
+.flip-out { transform: rotateX(90deg); opacity: 0; }
+.flip-in { transform: rotateX(0deg); opacity: 1; }
+
+/* Bounce */
+.bounce-in { 
+  animation: bounceIn 0.5s ease forwards; 
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+    /* Tutorial cards */
+    .tutorial-card {
+      background: #e8f0fe;
+      border-left: 6px solid #2a5db0;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgb(42 93 176 / 0.15);
+      color: #1e355f;
+      width: 100%;
+      max-width: 320px;
+      cursor: pointer;
+      user-select: none;
+      padding: 1.8rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      outline-offset: 3px;
+    }
+    .tutorial-card:hover,
+    .tutorial-card:focus-visible {
+      border-left-color: #2563eb;
+      box-shadow: 0 10px 25px rgb(37 99 235 / 0.3);
+      transform: scale(1.04);
+      outline: none;
+    }
+    .tutorial-card:active {
+      border-left-color: #1e355f;
+      box-shadow: 0 3px 8px rgb(30 53 95 / 0.4);
+      transform: scale(0.98);
+    }
+
+    /* Bounce animation (all cards simultaneously) */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+    .bounce {
+      animation: bounce 0.5s ease;
+    }
+
+    /* Shake animation (sequential) */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .shake {
+      animation: shake 0.5s ease;
+    }
+
+    /* Title & toggle */
+    .tutorial-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #1e355f;
+    }
+    .toggle-icon {
+      font-size: 1.3rem;
+      user-select: none;
+      transition: transform 0.3s ease;
+      color: #2563eb;
+    }
+    .tutorial-card.open .toggle-icon {
+      transform: rotate(90deg);
+    }
+
+    /* Description area */
+    .tutorial-desc {
+      max-height: 3.6em; /* show approx 3 lines before expansion */
+      overflow: hidden;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #555;
+      margin-top: 0.75rem;
+      line-height: 1.2em;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 0;
+      position: relative;
+      user-select: text;
+    }
+    .tutorial-desc::after {
+      content: " ...";
+      color: #2563eb;
+      font-weight: 600;
+      position: absolute;
+      bottom: 0.25em;
+      right: 0.25em;
+      background: #e8f0fe;
+      padding-left: 3px;
+      user-select: none;
+    }
+    .tutorial-card.open .tutorial-desc {
+      max-height: 300px; /* enough for full content */
+      padding: 0.75rem 0 0 0;
+      overflow: visible;
+    }
+    .tutorial-card.open .tutorial-desc::after {
+      content: "";
+    }
+
+    /* Go button inside description */
+    .go-button {
+      display: none;
+      width: fit-content;
+      margin-top: 1rem;
+      padding: 0.5rem 1.1rem;
+      background-color: #2a5db0;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      box-shadow: 0 3px 6px rgb(42 93 176 / 0.3);
+    }
+    .tutorial-card.open .go-button {
+      display: block;
+    }
+    .go-button:hover,
+    .go-button:focus-visible {
+      background-color: #2563eb;
+      outline: none;
+      box-shadow: 0 5px 12px rgb(37 99 235 / 0.5);
+    }
+    .go-button:active {
+      background-color: #1e355f;
+      box-shadow: 0 2px 5px rgb(30 53 95 / 0.5);
+    }
+
+    /* Keyboard focus */
+    .tutorial-card:focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .tutorial-card {
+        max-width: 100%;
+        font-size: 1.15rem;
+        padding: 1.4rem 1rem;
+      }
+      .tutorial-title {
+        font-size: 1.15rem;
+      }
+      .tutorial-desc {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <h1 id="main-title">Kuch Toh Seekho</h1>
+  <p class="subtitle">Choose a tutorial to start learning atleast today</p>
+</header>
+
+
+  <main>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-typing" role="button">
+      <div class="tutorial-title">
+        Typing Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-typing" class="tutorial-desc" aria-hidden="true">
+        Learn proper finger placement and typing skills with step-by-step interactive practice to increase speed and accuracy.
+        <a href="Typing/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-html" role="button">
+      <div class="tutorial-title">
+        HTML Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-html" class="tutorial-desc" aria-hidden="true">
+        Learn the structure of the web using HTML tags, elements, and semantic markup to build accessible websites that work across devices.
+        <a href="html/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-css" role="button">
+      <div class="tutorial-title">
+        CSS Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-css" class="tutorial-desc" aria-hidden="true">
+        Style and design beautiful websites with CSS. Learn selectors, layouts, colors, and responsive design techniques for modern web.
+        <a href="css/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-commandline" role="button">
+      <div class="tutorial-title">
+        Bash Command Line Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-commandline" class="tutorial-desc" aria-hidden="true">
+        Master Bash shell commands, navigation, file manipulation, and scripting to boost your productivity and automation.
+        <a href="bash/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-git" role="button">
+      <div class="tutorial-title">
+        Git Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-git" class="tutorial-desc" aria-hidden="true">
+        Learn essential Git commands and version control syntax for tracking and collaborating on code with ease.
+        <a href="git/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-javascript" role="button">
+      <div class="tutorial-title">
+        JavaScript Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-javascript" class="tutorial-desc" aria-hidden="true">
+        Add interactivity to your web pages by learning JavaScript fundamentals, DOM manipulation, and event handling.
+        <a href="javascript/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-python" role="button">
+      <div class="tutorial-title">
+        Python Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-python" class="tutorial-desc" aria-hidden="true">
+        Learn Python programming for web, automation, data analysis, and general-purpose programming tasks.
+        <a href="python/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-django" role="button">
+      <div class="tutorial-title">
+        Django Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-django" class="tutorial-desc" aria-hidden="true">
+        It leverages Python's capabilities for web, automation, data analysis, within the context of web application development.
+        <a href="django/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-postgresql" role="button">
+      <div class="tutorial-title">
+        PostgreSQL Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-postgresql" class="tutorial-desc" aria-hidden="true">
+        Master SQL querying and database management using PostgreSQL syntax and advanced features.
+        <a href="postgre/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-react" role="button">
+      <div class="tutorial-title">
+        React + JSX Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-react" class="tutorial-desc" aria-hidden="true">
+        Build interactive UIs using React with JSX syntax, components, and hooks.
+        <a href="reactjsx/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-typescript" role="button">
+      <div class="tutorial-title">
+        TypeScript Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-typescript" class="tutorial-desc" aria-hidden="true">
+        Learn TypeScript syntax for static typing and advanced JavaScript development practices.
+        <a href="typescript/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-react-native" role="button">
+      <div class="tutorial-title">
+        React Native Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-react-native" class="tutorial-desc" aria-hidden="true">
+        Develop mobile apps using React Native syntax and components for Android and iOS.
+        <a href="reactnative/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+    <article tabindex="0" class="tutorial-card" aria-expanded="false" aria-controls="desc-jest" role="button">
+      <div class="tutorial-title">
+        Jest Tutorial
+        <span class="toggle-icon" aria-hidden="true">&#9654;</span>
+      </div>
+      <section id="desc-jest" class="tutorial-desc" aria-hidden="true">
+        Learn Jest syntax for JavaScript testing and test-driven development.
+        <a href="jest/index.html" class="go-button" tabindex="0">Go to Tutorial</a>
+      </section>
+    </article>
+
+  </main>
+
+  <script>
+
+    const titles = [
+  "Kuch Toh Seekho",
+  "Aaj Shuru Karo",
+  "Kal Mat Bolo",
+  "JavaScript seekhogey?",
+  "Python seekhogey?",
+  "Kamsey Kam HTML tho shuru karo",
+  "CommandLine sey shuru koregey?",
+  "Kuch na kuch tho shuru karo",
+  "Typing tho pakka seekho",
+  "Bas seekho. Kuch mat bolo"
+];
+
+// Pairs of animations: [outClass, inClass]
+const animations = [
+  ["fade-out", "fade-in"],
+  ["slide-left-out", "slide-left-in"],
+  ["slide-right-out", "slide-right-in"],
+  ["zoom-out", "zoom-in"],
+  ["rotate-out", "rotate-in"],
+  ["flip-out", "flip-in"],
+  ["fade-out", "bounce-in"] // bounce is only for in effect
+];
+
+const h1 = document.getElementById("main-title");
+let currentIndex = 0;
+
+function changeTitle() {
+  // Pick a random title different from the current one
+  let newIndex;
+  do {
+    newIndex = Math.floor(Math.random() * titles.length);
+  } while (newIndex === currentIndex);
+
+  // Pick a random animation
+  const [outAnim, inAnim] = animations[Math.floor(Math.random() * animations.length)];
+
+  // Start OUT animation
+  h1.classList.add(outAnim);
+  
+  setTimeout(() => {
+    // Change text when out animation finishes
+    h1.textContent = titles[newIndex];
+    currentIndex = newIndex;
+
+    // Remove OUT animation and add IN animation
+    h1.classList.remove(outAnim);
+    h1.classList.add(inAnim);
+
+    // Remove IN animation after it finishes to reset
+    setTimeout(() => {
+      h1.classList.remove(inAnim);
+    }, 500);
+
+  }, 500); // matches CSS transition duration
+}
+
+// Change every 3 seconds
+setInterval(changeTitle, 3000);
+
+
+
+
+    const cards = document.querySelectorAll('.tutorial-card');
+
+    // Bounce all cards once simultaneously
+    function bounceAll(cards) {
+      cards.forEach(card => {
+        card.classList.add('bounce');
+        card.addEventListener('animationend', () => {
+          card.classList.remove('bounce');
+        }, { once: true });
+      });
+    }
+
+    // Shake animation on load in sequence with 400ms delay
+    function shakeCardsSequentially(cards) {
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('shake');
+          card.addEventListener('animationend', () => {
+            card.classList.remove('shake');
+          }, { once: true });
+        }, index * 400);
+      });
+    }
+
+    window.addEventListener('load', () => {
+      bounceAll(cards);
+      // Start shaking after bounce ends (0.5s animation)
+      setTimeout(() => {
+        shakeCardsSequentially(cards);
+      }, 500);
+    });
+
+    cards.forEach(card => {
+      card.addEventListener('click', e => {
+        if (e.target.closest('.go-button')) return;
+
+        const isOpen = card.classList.contains('open');
+
+        cards.forEach(c => {
+          c.classList.remove('open');
+          c.setAttribute('aria-expanded', 'false');
+          c.querySelector('.tutorial-desc').setAttribute('aria-hidden', 'true');
+        });
+
+        if (!isOpen) {
+          card.classList.add('open');
+          card.setAttribute('aria-expanded', 'true');
+          card.querySelector('.tutorial-desc').setAttribute('aria-hidden', 'false');
+        }
+      });
+
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

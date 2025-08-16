@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Learning</title>
+  <link rel="stylesheet" href="../commonsindex/commonindex.css">
+</head>
+<body>
+
+<main>
+
+  <header>
+    <h1>Welcome to Python Learning</h1>
+    <p class="subtitle">Your beginner-friendly guide to mastering Python step-by-step</p>
+  </header>
+
+  <!-- Python Tutorial with Side-by-Side Examples -->
+  <section class="teaching" aria-label="Complete Introduction to Python">
+
+    <h2>Complete Introduction to Python</h2>
+
+    <h3>1. What is Python?</h3>
+    <p>
+      Python is a popular, easy-to-learn programming language used for web development, data analysis, automation, AI, and more. It emphasizes readable code and simplicity.
+    </p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <!-- Left side: Python code -->
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>print("Hello, Python!")</code>
+      </div>
+
+      <!-- Right side: Output -->
+      <div class="example-output" aria-label="Python print output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>Hello, Python!</pre>
+      </div>
+
+    </div>
+
+    <h3>2. How Python Fits Into Programming</h3>
+    <p>
+      Python is a general-purpose language used for:
+    </p>
+    <ul>
+      <li>Web and software development</li>
+      <li>Data science and machine learning</li>
+      <li>Scripting and automation</li>
+      <li>Game development</li>
+    </ul>
+
+    <h3>3. Why Learn Python?</h3>
+    <ul>
+      <li>Simple and readable syntax.</li>
+      <li>Large community and lots of libraries.</li>
+      <li>High demand in the job market.</li>
+      <li>Versatile for many types of projects.</li>
+    </ul>
+
+    <h3>4. Python Syntax Basics</h3>
+    <p>Python uses indentation to group code blocks instead of braces.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>name = "Alice"
+print("Hello, " + name)</code>
+      </div>
+
+      <div class="example-output" aria-label="Python variables output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>Hello, Alice</pre>
+      </div>
+
+    </div>
+
+    <h3>5. Variables and Data Types</h3>
+    <p>Variables store data and do not need explicit declaration.</p>
+    <ul>
+      <li><code>str</code>: Text data, e.g., <code>"hello"</code></li>
+      <li><code>int</code>: Whole numbers, e.g., <code>10</code></li>
+      <li><code>float</code>: Decimal numbers, e.g., <code>3.14</code></li>
+      <li><code>bool</code>: True or False</li>
+      <li><code>list</code>: Ordered collections</li>
+      <li><code>dict</code>: Key-value pairs</li>
+    </ul>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>age = 25
+height = 5.7
+is_student = True
+fruits = ["apple", "banana", "cherry"]
+person = {"name": "Bob", "age": 30}
+print(age, height, is_student)
+print(fruits[1])
+print(person["name"])</code>
+      </div>
+
+      <div class="example-output" aria-label="Python variables output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>
+25 5.7 True
+banana
+Bob
+        </pre>
+      </div>
+
+    </div>
+
+    <h3>6. Operators</h3>
+    <p>Operators perform calculations or comparisons.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>x = 10
+y = 3
+print(x + y)  # Addition
+print(x > y)  # Comparison</code>
+      </div>
+
+      <div class="example-output" aria-label="Python operators output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>
+13
+True
+        </pre>
+      </div>
+
+    </div>
+
+    <h3>7. Control Flow: if, else, elif</h3>
+    <p>Run different code based on conditions.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>age = 18
+if age >= 18:
+    print("Adult")
+elif age > 12:
+    print("Teenager")
+else:
+    print("Child")</code>
+      </div>
+
+      <div class="example-output" aria-label="Python if-else output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>Adult</pre>
+      </div>
+
+    </div>
+
+    <h3>8. Loops: for and while</h3>
+    <p>Repeat code multiple times.</p>
+
+    <p><strong>For loop example:</strong></p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>for i in range(1, 6):
+    print("Count:", i)</code>
+      </div>
+
+      <div class="example-output" aria-label="Python for loop output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+        </pre>
+      </div>
+
+    </div>
+
+    <p><strong>While loop example:</strong></p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>count = 1
+while count <= 5:
+    print(count)
+    count += 1</code>
+      </div>
+
+      <div class="example-output" aria-label="Python while loop output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>
+1
+2
+3
+4
+5
+        </pre>
+      </div>
+
+    </div>
+
+    <h3>9. Functions</h3>
+    <p>Functions group reusable code blocks.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>def greet(name):
+    print("Hello, " + name + "!")
+
+greet("Bob")</code>
+      </div>
+
+      <div class="example-output" aria-label="Python function output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>Hello, Bob!</pre>
+      </div>
+
+    </div>
+
+    <h3>10. Lists and Dictionaries</h3>
+    <p>Lists are ordered collections. Dictionaries store key-value pairs.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>fruits = ["apple", "banana", "cherry"]
+print(fruits[0])
+
+person = {"name": "Alice", "age": 25}
+print(person["age"])</code>
+      </div>
+
+      <div class="example-output" aria-label="Python lists and dict output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>
+apple
+25
+        </pre>
+      </div>
+
+    </div>
+
+    <h3>11. Error Handling</h3>
+    <p>Use <code>try...except</code> to handle errors and prevent program crashes.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("Cannot divide by zero!")</code>
+      </div>
+
+      <div class="example-output" aria-label="Python error handling output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>Cannot divide by zero!</pre>
+      </div>
+
+    </div>
+
+    <h3>12. Modules and Libraries</h3>
+    <p>Modules are files containing Python code. Libraries are collections of modules for extra functionality.</p>
+
+    <p>Example: Using the <code>math</code> module.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>import math
+print(math.sqrt(16))</code>
+      </div>
+
+      <div class="example-output" aria-label="Python module output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>4.0</pre>
+      </div>
+
+    </div>
+
+    <h3>13. File Handling Basics</h3>
+    <p>Python lets you read and write files easily.</p>
+
+    <div class="example" style="display: flex; gap: 1rem; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+
+      <div class="example-code" style="flex: 1; background: #f4f6fc; padding: 1rem; font-family: monospace; white-space: pre-wrap; color: #1e3a8a; overflow-x: auto;">
+<code>with open("example.txt", "w") as file:
+    file.write("Hello, file!")
+
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)</code>
+      </div>
+
+      <div class="example-output" aria-label="Python file handling output" style="flex: 1; background: #fff; padding: 1rem; font-family: monospace; color: #111; box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07); min-height: 160px;">
+        <p><strong>Output:</strong></p>
+        <pre>Hello, file!</pre>
+      </div>
+
+    </div>
+
+    <h3>14. Summary</h3>
+    <p>
+      Python is a versatile, beginner-friendly programming language used worldwide for many purposes.<br>
+      By learning Python fundamentals and practicing with examples, you'll gain skills to build applications, automate tasks, and analyze data.<br>
+      This course will guide you step-by-step towards confident Python programming.
+    </p>
+
+  </section>
+
+
+
+
+<!-- Python Categories (Learning Order) -->
+
+<!-- Category 1 -->
+<section class="accordion" aria-label="Python Basics & Syntax">
+  <div class="accordion-item" id="cat-1">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-1" data-target="content-1">
+      <span class="number">1.</span>
+      <span class="title">Python Basics & Syntax</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-1" role="region" aria-labelledby="cat-1">
+
+      <!-- Subcategory 1.1 -->
+      <a href="py1/print.html" class="lesson-link" tabindex="0">
+        <span class="number">1.1</span> print()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.2 -->
+      <a href="py1/comment.html" class="lesson-link" tabindex="0">
+        <span class="number">1.2</span> comment
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.3 -->
+      <a href="py1/multiline_docstring.html" class="lesson-link" tabindex="0">
+        <span class="number">1.3</span> """…""" (multiline string / docstring)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.4 -->
+      <a href="py1/multiline_string.html" class="lesson-link" tabindex="0">
+        <span class="number">1.4</span> '''…''' (multiline string)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.5 -->
+      <a href="py1/none.html" class="lesson-link" tabindex="0">
+        <span class="number">1.5</span> None
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.6 -->
+      <a href="py1/true.html" class="lesson-link" tabindex="0">
+        <span class="number">1.6</span> True
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.7 -->
+      <a href="py1/false.html" class="lesson-link" tabindex="0">
+        <span class="number">1.7</span> False
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.8 -->
+      <a href="py1/and.html" class="lesson-link" tabindex="0">
+        <span class="number">1.8</span> and
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.9 -->
+      <a href="py1/or.html" class="lesson-link" tabindex="0">
+        <span class="number">1.9</span> or
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.10 -->
+      <a href="py1/not.html" class="lesson-link" tabindex="0">
+        <span class="number">1.10</span> not
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.11 -->
+      <a href="py1/is.html" class="lesson-link" tabindex="0">
+        <span class="number">1.11</span> is
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.12 -->
+      <a href="py1/in.html" class="lesson-link" tabindex="0">
+        <span class="number">1.12</span> in
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.13 -->
+      <a href="py1/assignment.html" class="lesson-link" tabindex="0">
+        <span class="number">1.13</span> =
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.14 -->
+      <a href="py1/equal.html" class="lesson-link" tabindex="0">
+        <span class="number">1.14</span> ==
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.15 -->
+      <a href="py1/not_equal.html" class="lesson-link" tabindex="0">
+        <span class="number">1.15</span> !=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.16 -->
+      <a href="py1/less_than.html" class="lesson-link" tabindex="0">
+        <span class="number">1.16</span> &
+lt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.17 -->
+      <a href="py1/greater_than_equal.html" class="lesson-link" tabindex="0">
+        <span class="number">1.17</span> >=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.18 -->
+      <a href="py1/less_than_equal.html" class="lesson-link" tabindex="0">
+        <span class="number">1.18</span> <=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.19 -->
+      <a href="py1/division.html" class="lesson-link" tabindex="0">
+        <span class="number">1.19</span> /
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.20 -->
+      <a href="py1/floor_division.html" class="lesson-link" tabindex="0">
+        <span class="number">1.20</span> //
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.21 -->
+      <a href="py1/modulus.html" class="lesson-link" tabindex="0">
+        <span class="number">1.21</span> %
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.22 -->
+      <a href="py1/exponent.html" class="lesson-link" tabindex="0">
+        <span class="number">1.22</span> **
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.23 -->
+      <a href="py1/add_assign.html" class="lesson-link" tabindex="0">
+        <span class="number">1.23</span> +=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.24 -->
+      <a href="py1/subtract_assign.html" class="lesson-link" tabindex="0">
+        <span class="number">1.24</span> -=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.25 -->
+      <a href="py1/multiply_assign.html" class="lesson-link" tabindex="0">
+        <span class="number">1.25</span> *=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.26 -->
+      <a href="py1/divide_assign.html" class="lesson-link" tabindex="0">
+        <span class="number">1.26</span> /=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.27 -->
+      <a href="py1/modulus_assign.html" class="lesson-link" tabindex="0">
+        <span class="number">1.27</span> %=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.28 -->
+      <a href="py1/exponent_assign.html" class="lesson-link" tabindex="0">
+        <span class="number">1.28</span> **=
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.29 -->
+      <a href="py1/comma.html" class="lesson-link" tabindex="0">
+        <span class="number">1.29</span> ,
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.30 -->
+      <a href="py1/colon.html" class="lesson-link" tabindex="0">
+        <span class="number">1.30</span> :
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.31 -->
+      <a href="py1/semicolon.html" class="lesson-link" tabindex="0">
+        <span class="number">1.31</span> ;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.32 -->
+      <a href="py1/ellipsis.html" class="lesson-link" tabindex="0">
+        <span class="number">1.32</span> … (ellipsis)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 2 -->
+<section class="accordion" aria-label="Variables & Data Types">
+  <div class="accordion-item" id="cat-2">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-2" data-target="content-2">
+      <span class="number">2.</span>
+      <span class="title">Variables & Data Types</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-2" role="region" aria-labelledby="cat-2">
+
+      <!-- Subcategory 2.1 -->
+      <a href="py2/int.html" class="lesson-link" tabindex="0">
+        <span class="number">2.1</span> int
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.2 -->
+      <a href="py2/float.html" class="lesson-link" tabindex="0">
+        <span class="number">2.2</span> float
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.3 -->
+      <a href="py2/complex.html" class="lesson-link" tabindex="0">
+        <span class="number">2.3</span> complex
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.4 -->
+      <a href="py2/str.html" class="lesson-link" tabindex="0">
+        <span class="number">2.4</span> str
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.5 -->
+      <a href="py2/bool.html" class="lesson-link" tabindex="0">
+        <span class="number">2.5</span> bool
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.6 -->
+      <a href="py2/list.html" class="lesson-link" tabindex="0">
+        <span class="number">2.6</span> list
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.7 -->
+      <a href="py2/tuple.html" class="lesson-link" tabindex="0">
+        <span class="number">2.7</span> tuple
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.8 -->
+      <a href="py2/set.html" class="lesson-link" tabindex="0">
+        <span class="number">2.8</span> set
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.9 -->
+      <a href="py2/frozenset.html" class="lesson-link" tabindex="0">
+        <span class="number">2.9</span> frozenset
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.10 -->
+      <a href="py2/dict.html" class="lesson-link" tabindex="0">
+        <span class="number">2.10</span> dict
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.11 -->
+      <a href="py2/bytes.html" class="lesson-link" tabindex="0">
+        <span class="number">2.11</span> bytes
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.12 -->
+      <a href="py2/bytearray.html" class="lesson-link" tabindex="0">
+        <span class="number">2.12</span> bytearray
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.13 -->
+      <a href="py2/memoryview.html" class="lesson-link" tabindex="0">
+        <span class="number">2.13</span> memoryview
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.14 -->
+      <a href="py2/type.html" class="lesson-link" tabindex="0">
+        <span class="number">2.14</span> type()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.15 -->
+      <a href="py2/id.html" class="lesson-link" tabindex="0">
+        <span class="number">2.15</span> id()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.16 -->
+      <a href="py2/len.html" class="lesson-link" tabindex="0">
+        <span class="number">2.16</span> len()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.17 -->
+      <a href="py2/input.html" class="lesson-link" tabindex="0">
+        <span class="number">2.17</span> input()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.18 -->
+      <a href="py2/int_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.18</span> int()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.19 -->
+      <a href="py2/float_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.19</span> float()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.20 -->
+      <a href="py2/str_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.20</span> str()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.21 -->
+      <a href="py2/bool_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.21</span> bool()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.22 -->
+      <a href="py2/list_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.22</span> list()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.23 -->
+      <a href="py2/tuple_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.23</span> tuple()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.24 -->
+      <a href="py2/set_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.24</span> set()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.25 -->
+      <a href="py2/dict_func.html" class="lesson-link" tabindex="0">
+        <span class="number">2.25</span> dict()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 3 -->
+<section class="accordion" aria-label="Control Flow">
+  <div class="accordion-item" id="cat-3">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-3" data-target="content-3">
+      <span class="number">3.</span>
+      <span class="title">Control Flow</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-3" role="region" aria-labelledby="cat-3">
+
+      <!-- Subcategory 3.1 -->
+      <a href="py3/if.html" class="lesson-link" tabindex="0">
+        <span class="number">3.1</span> if
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.2 -->
+      <a href="py3/elif.html" class="lesson-link" tabindex="0">
+        <span class="number">3.2</span> elif
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.3 -->
+      <a href="py3/else.html" class="lesson-link" tabindex="0">
+        <span class="number">3.3</span> else
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.4 -->
+      <a href="py3/for.html" class="lesson-link" tabindex="0">
+        <span class="number">3.4</span> for
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.5 -->
+      <a href="py3/while.html" class="lesson-link" tabindex="0">
+        <span class="number">3.5</span> while
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.6 -->
+      <a href="py3/break.html" class="lesson-link" tabindex="0">
+        <span class="number">3.6</span> break
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.7 -->
+      <a href="py3/continue.html" class="lesson-link" tabindex="0">
+        <span class="number">3.7</span> continue
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.8 -->
+      <a href="py3/pass.html" class="lesson-link" tabindex="0">
+        <span class="number">3.8</span> pass
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.9 -->
+      <a href="py3/range.html" class="lesson-link" tabindex="0">
+        <span class="number">3.9</span> range()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.10 -->
+      <a href="py3/enumerate.html" class="lesson-link" tabindex="0">
+        <span class="number">3.10</span> enumerate()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.11 -->
+      <a href="py3/zip.html" class="lesson-link" tabindex="0">
+        <span class="number">3.11</span> zip()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.12 -->
+      <a href="py3/reversed.html" class="lesson-link" tabindex="0">
+        <span class="number">3.12</span> reversed()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.13 -->
+      <a href="py3/sorted.html" class="lesson-link" tabindex="0">
+        <span class="number">3.13</span> sorted()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 4 -->
+<section class="accordion" aria-label="Functions & Scope">
+  <div class="accordion-item" id="cat-4">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-4" data-target="content-4">
+      <span class="number">4.</span>
+      <span class="title">Functions & Scope</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-4" role="region" aria-labelledby="cat-4">
+
+      <!-- Subcategory 4.1 -->
+      <a href="py4/def.html" class="lesson-link" tabindex="0">
+        <span class="number">4.1</span> def
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.2 -->
+      <a href="py4/return.html" class="lesson-link" tabindex="0">
+        <span class="number">4.2</span> return
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.3 -->
+      <a href="py4/lambda.html" class="lesson-link" tabindex="0">
+        <span class="number">4.3</span> lambda
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.4 -->
+      <a href="py4/args.html" class="lesson-link" tabindex="0">
+        <span class="number">4.4</span> *args
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.5 -->
+      <a href="py4/kwargs.html" class="lesson-link" tabindex="0">
+        <span class="number">4.5</span> **kwargs
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.6 -->
+      <a href="py4/global.html" class="lesson-link" tabindex="0">
+        <span class="number">4.6</span> global
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.7 -->
+      <a href="py4/nonlocal.html" class="lesson-link" tabindex="0">
+        <span class="number">4.7</span> nonlocal
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.8 -->
+      <a href="py4/del.html" class="lesson-link" tabindex="0">
+        <span class="number">4.8</span> del
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.9 -->
+      <a href="py4/abs.html" class="lesson-link" tabindex="0">
+        <span class="number">4.9</span> abs()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.10 -->
+      <a href="py4/round.html" class="lesson-link" tabindex="0">
+        <span class="number">4.10</span> round()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.11 -->
+      <a href="py4/min.html" class="lesson-link" tabindex="0">
+        <span class="number">4.11</span> min()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.12 -->
+      <a href="py4/max.html" class="lesson-link" tabindex="0">
+        <span class="number">4.12</span> max()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.13 -->
+      <a href="py4/sum.html" class="lesson-link" tabindex="0">
+        <span class="number">4.13</span> sum()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.14 -->
+      <a href="py4/all.html" class="lesson-link" tabindex="0">
+        <span class="number">4.14</span> all()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.15 -->
+      <a href="py4/any.html" class="lesson-link" tabindex="0">
+        <span class="number">4.15</span> any()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.16 -->
+      <a href="py4/dir.html" class="lesson-link" tabindex="0">
+        <span class="number">4.16</span> dir()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.17 -->
+      <a href="py4/help.html" class="lesson-link" tabindex="0">
+        <span class="number">4.17</span> help()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.18 -->
+      <a href="py4/id.html" class="lesson-link" tabindex="0">
+        <span class="number">4.18</span> id()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.19 -->
+      <a href="py4/type.html" class="lesson-link" tabindex="0">
+        <span class="number">4.19</span> type()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.20 -->
+      <a href="py4/callable.html" class="lesson-link" tabindex="0">
+        <span class="number">4.20</span> callable()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.21 -->
+      <a href="py4/eval.html" class="lesson-link" tabindex="0">
+        <span class="number">4.21</span> eval()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.22 -->
+      <a href="py4/exec.html" class="lesson-link" tabindex="0">
+        <span class="number">4.22</span> exec()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 5 -->
+<section class="accordion" aria-label="Strings & String Methods">
+  <div class="accordion-item" id="cat-5">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-5" data-target="content-5">
+      <span class="number">5.</span>
+      <span class="title">Strings & String Methods</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-5" role="region" aria-labelledby="cat-5">
+
+      <!-- Subcategory 5.1 -->
+      <a href="py5/quotes.html" class="lesson-link" tabindex="0">
+        <span class="number">5.1</span> "…" / '…'
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.2 -->
+      <a href="py5/upper.html" class="lesson-link" tabindex="0">
+        <span class="number">5.2</span> str.upper()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.3 -->
+      <a href="py5/lower.html" class="lesson-link" tabindex="0">
+        <span class="number">5.3</span> str.lower()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.4 -->
+      <a href="py5/title.html" class="lesson-link" tabindex="0">
+        <span class="number">5.4</span> str.title()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.5 -->
+      <a href="py5/capitalize.html" class="lesson-link" tabindex="0">
+        <span class="number">5.5</span> str.capitalize()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.6 -->
+      <a href="py5/strip.html" class="lesson-link" tabindex="0">
+        <span class="number">5.6</span> str.strip()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.7 -->
+      <a href="py5/lstrip.html" class="lesson-link" tabindex="0">
+        <span class="number">5.7</span> str.lstrip()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.8 -->
+      <a href="py5/rstrip.html" class="lesson-link" tabindex="0">
+        <span class="number">5.8</span> str.rstrip()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.9 -->
+      <a href="py5/find.html" class="lesson-link" tabindex="0">
+        <span class="number">5.9</span> str.find()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.10 -->
+      <a href="py5/replace.html" class="lesson-link" tabindex="0">
+        <span class="number">5.10</span> str.replace()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.11 -->
+      <a href="py5/split.html" class="lesson-link" tabindex="0">
+        <span class="number">5.11</span> str.split()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.12 -->
+      <a href="py5/join.html" class="lesson-link" tabindex="0">
+        <span class="number">5.12</span> str.join()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.13 -->
+      <a href="py5/startswith.html" class="lesson-link" tabindex="0">
+        <span class="number">5.13</span> str.startswith()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.14 -->
+      <a href="py5/endswith.html" class="lesson-link" tabindex="0">
+        <span class="number">5.14</span> str.endswith()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.15 -->
+      <a href="py5/count.html" class="lesson-link" tabindex="0">
+        <span class="number">5.15</span> str.count()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.16 -->
+      <a href="py5/isdigit.html" class="lesson-link" tabindex="0">
+        <span class="number">5.16</span> str.isdigit()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.17 -->
+      <a href="py5/isalpha.html" class="lesson-link" tabindex="0">
+        <span class="number">5.17</span> str.isalpha()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.18 -->
+      <a href="py5/isalnum.html" class="lesson-link" tabindex="0">
+        <span class="number">5.18</span> str.isalnum()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.19 -->
+      <a href="py5/format.html" class="lesson-link" tabindex="0">
+        <span class="number">5.19</span> str.format()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.20 -->
+      <a href="py5/fstrings.html" class="lesson-link" tabindex="0">
+        <span class="number">5.20</span> f-strings
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 6 -->
+<section class="accordion" aria-label="Lists, Tuples & Sets">
+  <div class="accordion-item" id="cat-6">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-6" data-target="content-6">
+      <span class="number">6.</span>
+      <span class="title">Lists, Tuples & Sets</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-6" role="region" aria-labelledby="cat-6">
+
+      <!-- Subcategory 6.1 -->
+      <a href="py6/list_append.html" class="lesson-link" tabindex="0">
+        <span class="number">6.1</span> list.append()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.2 -->
+      <a href="py6/list_insert.html" class="lesson-link" tabindex="0">
+        <span class="number">6.2</span> list.insert()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.3 -->
+      <a href="py6/list_remove.html" class="lesson-link" tabindex="0">
+        <span class="number">6.3</span> list.remove()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.4 -->
+      <a href="py6/list_pop.html" class="lesson-link" tabindex="0">
+        <span class="number">6.4</span> list.pop()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.5 -->
+      <a href="py6/list_clear.html" class="lesson-link" tabindex="0">
+        <span class="number">6.5</span> list.clear()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.6 -->
+      <a href="py6/list_index.html" class="lesson-link" tabindex="0">
+        <span class="number">6.6</span> list.index()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.7 -->
+      <a href="py6/list_count.html" class="lesson-link" tabindex="0">
+        <span class="number">6.7</span> list.count()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.8 -->
+      <a href="py6/list_sort.html" class="lesson-link" tabindex="0">
+        <span class="number">6.8</span> list.sort()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.9 -->
+      <a href="py6/list_reverse.html" class="lesson-link" tabindex="0">
+        <span class="number">6.9</span> list.reverse()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.10 -->
+      <a href="py6/tuple_count.html" class="lesson-link" tabindex="0">
+        <span class="number">6.10</span> tuple.count()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.11 -->
+      <a href="py6/tuple_index.html" class="lesson-link" tabindex="0">
+        <span class="number">6.11</span> tuple.index()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.12 -->
+      <a href="py6/set_add.html" class="lesson-link" tabindex="0">
+        <span class="number">6.12</span> set.add()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.13 -->
+      <a href="py6/set_remove.html" class="lesson-link" tabindex="0">
+        <span class="number">6.13</span> set.remove()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.14 -->
+      <a href="py6/set_discard.html" class="lesson-link" tabindex="0">
+        <span class="number">6.14</span> set.discard()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.15 -->
+      <a href="py6/set_pop.html" class="lesson-link" tabindex="0">
+        <span class="number">6.15</span> set.pop()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.16 -->
+      <a href="py6/set_union.html" class="lesson-link" tabindex="0">
+        <span class="number">6.16</span> set.union()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.17 -->
+      <a href="py6/set_intersection.html" class="lesson-link" tabindex="0">
+        <span class="number">6.17</span> set.intersection()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.18 -->
+      <a href="py6/set_difference.html" class="lesson-link" tabindex="0">
+        <span class="number">6.18</span> set.difference()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.19 -->
+      <a href="py6/set_symmetric_difference.html" class="lesson-link" tabindex="0">
+        <span class="number">6.19</span> set.symmetric_difference()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 7 -->
+<section class="accordion" aria-label="Dictionaries">
+  <div class="accordion-item" id="cat-7">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-7" data-target="content-7">
+      <span class="number">7.</span>
+      <span class="title">Dictionaries</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-7" role="region" aria-labelledby="cat-7">
+
+      <!-- Subcategory 7.1 -->
+      <a href="py7/dict_keys.html" class="lesson-link" tabindex="0">
+        <span class="number">7.1</span> dict.keys()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.2 -->
+      <a href="py7/dict_values.html" class="lesson-link" tabindex="0">
+        <span class="number">7.2</span> dict.values()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.3 -->
+      <a href="py7/dict_items.html" class="lesson-link" tabindex="0">
+        <span class="number">7.3</span> dict.items()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.4 -->
+      <a href="py7/dict_get.html" class="lesson-link" tabindex="0">
+        <span class="number">7.4</span> dict.get()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.5 -->
+      <a href="py7/dict_update.html" class="lesson-link" tabindex="0">
+        <span class="number">7.5</span> dict.update()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.6 -->
+      <a href="py7/dict_pop.html" class="lesson-link" tabindex="0">
+        <span class="number">7.6</span> dict.pop()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.7 -->
+      <a href="py7/dict_popitem.html" class="lesson-link" tabindex="0">
+        <span class="number">7.7</span> dict.popitem()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.8 -->
+      <a href="py7/dict_clear.html" class="lesson-link" tabindex="0">
+        <span class="number">7.8</span> dict.clear()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.9 -->
+      <a href="py7/dict_copy.html" class="lesson-link" tabindex="0">
+        <span class="number">7.9</span> dict.copy()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 8 -->
+<section class="accordion" aria-label="Modules & Packages">
+  <div class="accordion-item" id="cat-8">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-8" data-target="content-8">
+      <span class="number">8.</span>
+      <span class="title">Modules & Packages</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-8" role="region" aria-labelledby="cat-8">
+
+      <!-- Subcategory 8.1 -->
+      <a href="py8/import.html" class="lesson-link" tabindex="0">
+        <span class="number">8.1</span> import
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.2 -->
+      <a href="py8/from_import.html" class="lesson-link" tabindex="0">
+        <span class="number">8.2</span> from … import …
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.3 -->
+      <a href="py8/as.html" class="lesson-link" tabindex="0">
+        <span class="number">8.3</span> as
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.4 -->
+      <a href="py8/sys.html" class="lesson-link" tabindex="0">
+        <span class="number">8.4</span> sys
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.5 -->
+      <a href="py8/os.html" class="lesson-link" tabindex="0">
+        <span class="number">8.5</span> os
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.6 -->
+      <a href="py8/math.html" class="lesson-link" tabindex="0">
+        <span class="number">8.6</span> math
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.7 -->
+      <a href="py8/random.html" class="lesson-link" tabindex="0">
+        <span class="number">8.7</span> random
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.8 -->
+      <a href="py8/datetime.html" class="lesson-link" tabindex="0">
+        <span class="number">8.8</span> datetime
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.9 -->
+      <a href="py8/time.html" class="lesson-link" tabindex="0">
+        <span class="number">8.9</span> time
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.10 -->
+      <a href="py8/json.html" class="lesson-link" tabindex="0">
+        <span class="number">8.10</span> json
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.11 -->
+      <a href="py8/re.html" class="lesson-link" tabindex="0">
+        <span class="number">8.11</span> re
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.12 -->
+      <a href="py8/collections.html" class="lesson-link" tabindex="0">
+        <span class="number">8.12</span> collections
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.13 -->
+      <a href="py8/itertools.html" class="lesson-link" tabindex="0">
+        <span class="number">8.13</span> itertools
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.14 -->
+      <a href="py8/functools.html" class="lesson-link" tabindex="0">
+        <span class="number">8.14</span> functools
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.15 -->
+      <a href="py8/subprocess.html" class="lesson-link" tabindex="0">
+        <span class="number">8.15</span> subprocess
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.16 -->
+      <a href="py8/shutil.html" class="lesson-link" tabindex="0">
+        <span class="number">8.16</span> shutil
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 9 -->
+<section class="accordion" aria-label="File Handling & I/O">
+  <div class="accordion-item" id="cat-9">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-9" data-target="content-9">
+      <span class="number">9.</span>
+      <span class="title">File Handling & I/O</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-9" role="region" aria-labelledby="cat-9">
+
+      <!-- Subcategory 9.1 -->
+      <a href="py9/open.html" class="lesson-link" tabindex="0">
+        <span class="number">9.1</span> open()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.2 -->
+      <a href="py9/file_read.html" class="lesson-link" tabindex="0">
+        <span class="number">9.2</span> file.read()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.3 -->
+      <a href="py9/file_readline.html" class="lesson-link" tabindex="0">
+        <span class="number">9.3</span> file.readline()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.4 -->
+      <a href="py9/file_readlines.html" class="lesson-link" tabindex="0">
+        <span class="number">9.4</span> file.readlines()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.5 -->
+      <a href="py9/file_write.html" class="lesson-link" tabindex="0">
+        <span class="number">9.5</span> file.write()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.6 -->
+      <a href="py9/file_writelines.html" class="lesson-link" tabindex="0">
+        <span class="number">9.6</span> file.writelines()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.7 -->
+      <a href="py9/with_open.html" class="lesson-link" tabindex="0">
+        <span class="number">9.7</span> with open() as …
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.8 -->
+      <a href="py9/file_close.html" class="lesson-link" tabindex="0">
+        <span class="number">9.8</span> file.close()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.9 -->
+      <a href="py9/os_path_exists.html" class="lesson-link" tabindex="0">
+        <span class="number">9.9</span> os.path.exists()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.10 -->
+      <a href="py9/os_remove.html" class="lesson-link" tabindex="0">
+        <span class="number">9.10</span> os.remove()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.11 -->
+      <a href="py9/os_rename.html" class="lesson-link" tabindex="0">
+        <span class="number">9.11</span> os.rename()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.12 -->
+      <a href="py9/os_mkdir.html" class="lesson-link" tabindex="0">
+        <span class="number">9.12</span> os.mkdir()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.13 -->
+      <a href="py9/os_makedirs.html" class="lesson-link" tabindex="0">
+        <span class="number">9.13</span> os.makedirs()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.14 -->
+      <a href="py9/os_rmdir.html" class="lesson-link" tabindex="0">
+        <span class="number">9.14</span> os.rmdir()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.15 -->
+      <a href="py9/os_removedirs.html" class="lesson-link" tabindex="0">
+        <span class="number">9.15</span> os.removedirs()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 10 -->
+<section class="accordion" aria-label="Exceptions & Error Handling">
+  <div class="accordion-item" id="cat-10">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-10" data-target="content-10">
+      <span class="number">10.</span>
+      <span class="title">Exceptions & Error Handling</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-10" role="region" aria-labelledby="cat-10">
+
+      <!-- Subcategory 10.1 -->
+      <a href="py10/try.html" class="lesson-link" tabindex="0">
+        <span class="number">10.1</span> try
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.2 -->
+      <a href="py10/except.html" class="lesson-link" tabindex="0">
+        <span class="number">10.2</span> except
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.3 -->
+      <a href="py10/else.html" class="lesson-link" tabindex="0">
+        <span class="number">10.3</span> else
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.4 -->
+      <a href="py10/finally.html" class="lesson-link" tabindex="0">
+        <span class="number">10.4</span> finally
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.5 -->
+      <a href="py10/raise.html" class="lesson-link" tabindex="0">
+        <span class="number">10.5</span> raise
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.6 -->
+      <a href="py10/assert.html" class="lesson-link" tabindex="0">
+        <span class="number">10.6</span> assert
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.7 -->
+      <a href="py10/exception.html" class="lesson-link" tabindex="0">
+        <span class="number">10.7</span> Exception
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.8 -->
+      <a href="py10/valueerror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.8</span> ValueError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.9 -->
+      <a href="py10/typeerror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.9</span> TypeError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.10 -->
+      <a href="py10/indexerror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.10</span> IndexError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.11 -->
+      <a href="py10/keyerror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.11</span> KeyError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.12 -->
+      <a href="py10/attributeerror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.12</span> AttributeError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.13 -->
+      <a href="py10/filenotfounderror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.13</span> FileNotFoundError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.14 -->
+      <a href="py10/zerodivisionerror.html" class="lesson-link" tabindex="0">
+        <span class="number">10.14</span> ZeroDivisionError
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 11 -->
+<section class="accordion" aria-label="Object-Oriented Programming (OOP)">
+  <div class="accordion-item" id="cat-11">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-11" data-target="content-11">
+      <span class="number">11.</span>
+      <span class="title">Object-Oriented Programming (OOP)</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-11" role="region" aria-labelledby="cat-11">
+
+      <!-- Subcategory 11.1 -->
+      <a href="py11/class.html" class="lesson-link" tabindex="0">
+        <span class="number">11.1</span> class
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.2 -->
+      <a href="py11/init.html" class="lesson-link" tabindex="0">
+        <span class="number">11.2</span> __init__()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.3 -->
+      <a href="py11/self.html" class="lesson-link" tabindex="0">
+        <span class="number">11.3</span> self
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.4 -->
+      <a href="py11/str.html" class="lesson-link" tabindex="0">
+        <span class="number">11.4</span> __str__()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.5 -->
+      <a href="py11/repr.html" class="lesson-link" tabindex="0">
+        <span class="number">11.5</span> __repr__()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.6 -->
+      <a href="py11/inheritance.html" class="lesson-link" tabindex="0">
+        <span class="number">11.6</span> inheritance
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.7 -->
+      <a href="py11/super.html" class="lesson-link" tabindex="0">
+        <span class="number">11.7</span> super()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.8 -->
+      <a href="py11/property.html" class="lesson-link" tabindex="0">
+        <span class="number">11.8</span> @property
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.9 -->
+      <a href="py11/classmethod.html" class="lesson-link" tabindex="0">
+        <span class="number">11.9</span> @classmethod
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.10 -->
+      <a href="py11/staticmethod.html" class="lesson-link" tabindex="0">
+        <span class="number">11.10</span> @staticmethod
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.11 -->
+      <a href="py11/del.html" class="lesson-link" tabindex="0">
+        <span class="number">11.11</span> del()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 12 -->
+<section class="accordion" aria-label="Advanced Topics & Utilities">
+  <div class="accordion-item" id="cat-12">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-12" data-target="content-12">
+      <span class="number">12.</span>
+      <span class="title">Advanced Topics & Utilities</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-12" role="region" aria-labelledby="cat-12">
+
+      <!-- Subcategory 12.1 -->
+      <a href="py12/map.html" class="lesson-link" tabindex="0">
+        <span class="number">12.1</span> map()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.2 -->
+      <a href="py12/filter.html" class="lesson-link" tabindex="0">
+        <span class="number">12.2</span> filter()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.3 -->
+      <a href="py12/reduce.html" class="lesson-link" tabindex="0">
+        <span class="number">12.3</span> reduce()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.4 -->
+      <a href="py12/zip.html" class="lesson-link" tabindex="0">
+        <span class="number">12.4</span> zip()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.5 -->
+      <a href="py12/enumerate.html" class="lesson-link" tabindex="0">
+        <span class="number">12.5</span> enumerate()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.6 -->
+      <a href="py12/any.html" class="lesson-link" tabindex="0">
+        <span class="number">12.6</span> any()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.7 -->
+      <a href="py12/all.html" class="lesson-link" tabindex="0">
+        <span class="number">12.7</span> all()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.8 -->
+      <a href="py12/iter.html" class="lesson-link" tabindex="0">
+        <span class="number">12.8</span> iter()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.9 -->
+      <a href="py12/next.html" class="lesson-link" tabindex="0">
+        <span class="number">12.9</span> next()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.10 -->
+      <a href="py12/globals.html" class="lesson-link" tabindex="0">
+        <span class="number">12.10</span> globals()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.11 -->
+      <a href="py12/locals.html" class="lesson-link" tabindex="0">
+        <span class="number">12.11</span> locals()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.12 -->
+      <a href="py12/dir.html" class="lesson-link" tabindex="0">
+        <span class="number">12.12</span> dir()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.13 -->
+      <a href="py12/hasattr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.13</span> hasattr()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.14 -->
+      <a href="py12/getattr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.14</span> getattr()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.15 -->
+      <a href="py12/setattr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.15</span> setattr()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.16 -->
+      <a href="py12/delattr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.16</span> delattr()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.17 -->
+      <a href="py12/isinstance.html" class="lesson-link" tabindex="0">
+        <span class="number">12.17</span> isinstance()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.18 -->
+      <a href="py12/issubclass.html" class="lesson-link" tabindex="0">
+        <span class="number">12.18</span> issubclass()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.19 -->
+      <a href="py12/repr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.19</span> repr()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.20 -->
+      <a href="py12/eval.html" class="lesson-link" tabindex="0">
+        <span class="number">12.20</span> eval()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.21 -->
+      <a href="py12/exec.html" class="lesson-link" tabindex="0">
+        <span class="number">12.21</span> exec()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.22 -->
+      <a href="py12/memoryview.html" class="lesson-link" tabindex="0">
+        <span class="number">12.22</span> memoryview()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.23 -->
+      <a href="py12/bytearray.html" class="lesson-link" tabindex="0">
+        <span class="number">12.23</span> bytearray()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 Python Learning. All rights reserved.
+  </footer>
+
+  
+<script src="../commonsindex/commonindex.js"></script>
+  
+</body>
+</html>

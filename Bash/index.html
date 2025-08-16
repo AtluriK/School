@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bash Learning</title>
+  <link rel="stylesheet" href="../commonsindex/commonindex.css">
+</head>
+<body>
+
+<main>
+
+  <header>
+    <h1>Welcome to Command Line Learning</h1>
+    <p class="subtitle">Your beginner-friendly guide to mastering the command line step-by-step</p>
+  </header>
+
+  <!-- Intro + Detailed Tutorial (Theory only, no categories) -->
+  <section class="teaching" aria-label="Complete Introduction to Command Line">
+
+    <h2>Complete Introduction to Command Line</h2>
+
+    <h3>1. What is the Command Line?</h3>
+    <p>
+      The Command Line, also known as the Terminal, Shell, or Console, is a text-based interface used to interact with your computer’s operating system. Instead of clicking icons or buttons, you type commands to perform tasks like navigating files, running programs, and managing system settings.
+    </p>
+    <p>
+      It provides powerful control and automation capabilities, often faster and more efficient than graphical interfaces.
+    </p>
+
+    <h3>2. Why Use the Command Line?</h3>
+    <ul>
+      <li><strong>Speed and Efficiency:</strong> Perform complex tasks quickly with commands and scripts.</li>
+      <li><strong>Remote Access:</strong> Manage servers and computers over networks.</li>
+      <li><strong>Automation:</strong> Write scripts to automate repetitive tasks.</li>
+      <li><strong>Developer Essential:</strong> Many programming and development tools rely on the command line.</li>
+      <li><strong>Full Control:</strong> Access powerful tools and settings not always available in graphical interfaces.</li>
+    </ul>
+
+    <h3>3. Basic Components of the Command Line</h3>
+    <ul>
+      <li><strong>Prompt:</strong> The text that appears, indicating the command line is ready for input (e.g., <code>$</code> or <code>C:\></code>).</li>
+      <li><strong>Command:</strong> Instructions you type (like <code>cd</code>, <code>ls</code>, <code>mkdir</code>).</li>
+      <li><strong>Arguments:</strong> Extra information passed to commands (e.g., filenames, directories).</li>
+      <li><strong>Options/Flags:</strong> Modify command behavior (usually start with <code>-</code> or <code>--</code>).</li>
+      <li><strong>Output:</strong> The text the command returns, showing results or errors.</li>
+    </ul>
+
+    <h3>4. Opening the Command Line Interface</h3>
+    <p>
+      How you open the command line depends on your operating system:
+    </p>
+    <ul>
+      <li><strong>Windows:</strong> Use "Command Prompt" or "PowerShell". Search for these in the Start menu or press <code>Win + R</code> and type <code>cmd</code>.</li>
+      <li><strong>macOS:</strong> Use "Terminal" app found in Applications > Utilities.</li>
+      <li><strong>Linux:</strong> Most distributions have a Terminal app accessible via the applications menu or <code>Ctrl + Alt + T</code>.</li>
+    </ul>
+
+    <h3>5. Basic Command Line Navigation</h3>
+    <p>Common commands to move around the filesystem:</p>
+    <ul>
+      <li><code>pwd</code> (print working directory): Shows your current directory path.</li>
+      <li><code>ls</code> (list): Lists files and folders in the current directory. On Windows, use <code>dir</code>.</li>
+      <li><code>cd [directory]</code> (change directory): Moves into the specified directory. Use <code>cd ..</code> to go up one level.</li>
+    </ul>
+
+    <h3>6. Creating, Moving, and Deleting Files and Folders</h3>
+    <ul>
+      <li><code>mkdir [folder-name]</code>: Create a new directory.</li>
+      <li><code>touch [file-name]</code>: Create a new empty file (Linux/macOS). On Windows, use <code>type nul > filename</code> or <code>echo. > filename</code>.</li>
+      <li><code>mv [source] [destination]</code>: Move or rename files and folders.</li>
+      <li><code>cp [source] [destination]</code>: Copy files or directories.</li>
+      <li><code>rm [file]</code>: Delete a file (<code>rm -r [folder]</code> to delete folders recursively).</li>
+      <li><code>del [file]</code>: Delete files on Windows.</li>
+      <li><code>rmdir [folder]</code>: Remove empty folders on Windows; use <code>rm -r</code> on Linux/macOS for non-empty folders.</li>
+    </ul>
+
+    <h3>7. Viewing File Contents</h3>
+    <ul>
+      <li><code>cat [file]</code>: Display the contents of a file.</li>
+      <li><code>less [file]</code>: View large files page-by-page.</li>
+      <li><code>head [file]</code>: Show the first few lines of a file.</li>
+      <li><code>tail [file]</code>: Show the last few lines of a file.</li>
+    </ul>
+
+    <h3>8. Using Command Line Options and Flags</h3>
+    <p>
+      Many commands accept options or flags to modify their behavior. They usually start with one or two dashes:
+    </p>
+    <ul>
+      <li>Single dash and letter: <code>ls -l</code> (long listing format)</li>
+      <li>Double dash and word: <code>grep --ignore-case</code></li>
+    </ul>
+    <p>Learn the options for commands you use most frequently to make your work more efficient.</p>
+
+    <h3>9. Command Line Shortcuts and Autocomplete</h3>
+    <ul>
+      <li><strong>Tab completion:</strong> Press <kbd>Tab</kbd> to autocomplete commands and filenames.</li>
+      <li><strong>Arrow keys:</strong> Use up/down arrows to cycle through previous commands.</li>
+      <li><strong>Ctrl + C:</strong> Cancel the current command.</li>
+      <li><strong>Ctrl + L:</strong> Clear the screen.</li>
+    </ul>
+
+    <h3>10. Environment Variables</h3>
+    <p>
+      Environment variables store important information that programs can use, like your home directory or system paths.
+    </p>
+    <ul>
+      <li>View all environment variables with <code>env</code> or <code>printenv</code> (Linux/macOS), and <code>set</code> on Windows.</li>
+      <li>Access variables like <code>$HOME</code> (Linux/macOS) or <code>%USERPROFILE%</code> (Windows).</li>
+      <li>Modify or add environment variables to customize your command line experience.</li>
+    </ul>
+
+    <h3>11. Writing Simple Shell Scripts</h3>
+    <p>
+      You can automate tasks by writing scripts — text files with a series of commands.
+    </p>
+    <p>Example (Linux/macOS, saved as <code>hello.sh</code>):</p>
+    <pre><code>#!/bin/bash
+echo "Hello, world!"</code></pre>
+    <p>Make it executable with <code>chmod +x hello.sh</code> and run with <code>./hello.sh</code>.</p>
+    <p>Windows has batch files (<code>.bat</code>) and PowerShell scripts (<code>.ps1</code>).</p>
+
+    <h3>12. File Permissions Basics</h3>
+    <p>
+      On Linux/macOS, files and folders have permissions controlling who can read, write, or execute them.
+    </p>
+    <ul>
+      <li>Use <code>ls -l</code> to view permissions.</li>
+      <li>Change permissions with <code>chmod</code>.</li>
+      <li>Users and groups control access, important for security.</li>
+    </ul>
+
+    <h3>13. Command Line Tools and Utilities</h3>
+    <p>
+      The command line has many powerful built-in tools:
+    </p>
+    <ul>
+      <li><code>grep</code>: Search text using patterns.</li>
+      <li><code>find</code>: Find files and directories.</li>
+      <li><code>tar</code>, <code>zip</code>: Compress and archive files.</li>
+      <li><code>ssh</code>: Connect securely to remote computers.</li>
+      <li><code>top</code>, <code>htop</code>: Monitor system processes and resources.</li>
+    </ul>
+    <p>Learning these tools helps you work efficiently on the command line.</p>
+
+    <h3>14. Safety Tips When Using the Command Line</h3>
+    <ul>
+      <li>Be careful with commands like <code>rm</code> and <code>sudo</code> — they can delete important files or change system settings.</li>
+      <li>Double-check commands before running them.</li>
+      <li>Keep backups of important data.</li>
+    </ul>
+
+    <h3>15. Resources to Learn More</h3>
+    <ul>
+      <li><a href="https://linuxcommand.org/" target="_blank" rel="noopener">Linux Command</a> — beginner tutorials</li>
+      <li><a href="https://ss64.com/" target="_blank" rel="noopener">SS64</a> — comprehensive command references</li>
+      <li><a href="https://explainshell.com/" target="_blank" rel="noopener">ExplainShell</a> — breaks down command syntax</li>
+      <li>Try online terminals like <a href="https://www.webminal.org/" target="_blank" rel="noopener">Webminal</a> or <a href="https://www.tutorialspoint.com/execute_bash_online.php" target="_blank" rel="noopener">TutorialsPoint</a>.</li>
+      <li>Practice regularly — command line skills improve with use.</li>
+    </ul>
+
+    <h3>Summary</h3>
+    <p>
+      The command line is a powerful tool that lets you control your computer quickly and efficiently through text commands.<br>
+      This introduction covered its basic concepts, common commands, navigation, scripting, and essential tips.<br>
+      Mastering the command line opens up new opportunities for development, system administration, and automation.<br>
+      Keep practicing to build confidence and speed.<br>
+      Welcome to your command line journey!
+    </p>
+
+  </section>
+
+
+
+
+
+<!-- Bash Categories (Learning Order) -->
+
+<!-- Category 1 -->
+<section class="accordion" aria-label="Terminal & Environment Basics">
+  <div class="accordion-item" id="cat-1">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-1" data-target="content-1">
+      <span class="number">1.</span>
+      <span class="title">Terminal & Environment Basics</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-1" role="region" aria-labelledby="cat-1">
+
+      <!-- Subcategory 1.1 -->
+      <a href="c1/pwd.html" class="lesson-link" tabindex="0">
+        <span class="number">1.1</span> pwd
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.2 -->
+      <a href="c1/whoami.html" class="lesson-link" tabindex="0">
+        <span class="number">1.2</span> whoami
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.3 -->
+      <a href="c1/id.html" class="lesson-link" tabindex="0">
+        <span class="number">1.3</span> id
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.4 -->
+      <a href="c1/hostname.html" class="lesson-link" tabindex="0">
+        <span class="number">1.4</span> hostname
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.5 -->
+      <a href="c1/uname.html" class="lesson-link" tabindex="0">
+        <span class="number">1.5</span> uname
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.6 -->
+      <a href="c1/tty.html" class="lesson-link" tabindex="0">
+        <span class="number">1.6</span> tty
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.7 -->
+      <a href="c1/clear.html" class="lesson-link" tabindex="0">
+        <span class="number">1.7</span> clear
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.8 -->
+      <a href="c1/history.html" class="lesson-link" tabindex="0">
+        <span class="number">1.8</span> history
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.9 -->
+      <a href="c1/man.html" class="lesson-link" tabindex="0">
+        <span class="number">1.9</span> man
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.10 -->
+      <a href="c1/help.html" class="lesson-link" tabindex="0">
+        <span class="number">1.10</span> help
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.11 -->
+      <a href="c1/command-help.html" class="lesson-link" tabindex="0">
+        <span class="number">1.11</span> command --help
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 1.12 -->
+      <a href="c1/exit.html" class="lesson-link" tabindex="0">
+        <span class="number">1.12</span> exit
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 2 -->
+<section class="accordion" aria-label="Bash Scripting Foundations">
+  <div class="accordion-item" id="cat-2">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-2" data-target="content-2">
+      <span class="number">2.</span>
+      <span class="title">Bash Scripting Foundations</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-2" role="region" aria-labelledby="cat-2">
+
+      <!-- Subcategory 2.1 -->
+      <a href="c2/shebang.html" class="lesson-link" tabindex="0">
+        <span class="number">2.1</span> #!/usr/bin/env bash
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.2 -->
+      <a href="c2/single-quotes.html" class="lesson-link" tabindex="0">
+        <span class="number">2.2</span> '…'
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.3 -->
+      <a href="c2/double-quotes.html" class="lesson-link" tabindex="0">
+        <span class="number">2.3</span> "…"
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.4 -->
+      <a href="c2/ansi-c-quotes.html" class="lesson-link" tabindex="0">
+        <span class="number">2.4</span> $'…'
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.5 -->
+      <a href="c2/escape.html" class="lesson-link" tabindex="0">
+        <span class="number">2.5</span> \
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.6 -->
+      <a href="c2/bash-script-sh.html" class="lesson-link" tabindex="0">
+        <span class="number">2.6</span> bash script.sh
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.7 -->
+      <a href="c2/execute-script.html" class="lesson-link" tabindex="0">
+        <span class="number">2.7</span> ./script.sh
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.8 -->
+      <a href="c2/echo.html" class="lesson-link" tabindex="0">
+        <span class="number">2.8</span> echo
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.9 -->
+      <a href="c2/printf.html" class="lesson-link" tabindex="0">
+        <span class="number">2.9</span> printf
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.10 -->
+      <a href="c2/var-assignment.html" class="lesson-link" tabindex="0">
+        <span class="number">2.10</span> var=value
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.11 -->
+      <a href="c2/var-substitution.html" class="lesson-link" tabindex="0">
+        <span class="number">2.11</span> ${var}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.12 -->
+      <a href="c2/var-default.html" class="lesson-link" tabindex="0">
+        <span class="number">2.12</span> ${var:-default}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.13 -->
+      <a href="c2/var-assign-default.html" class="lesson-link" tabindex="0">
+        <span class="number">2.13</span> ${var:=default}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.14 -->
+      <a href="c2/var-value-if-set.html" class="lesson-link" tabindex="0">
+        <span class="number">2.14</span> ${var:+value}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.15 -->
+      <a href="c2/var-error.html" class="lesson-link" tabindex="0">
+        <span class="number">2.15</span> ${var:?error_message}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.16 -->
+      <a href="c2/var-remove-pattern-longest.html" class="lesson-link" tabindex="0">
+        <span class="number">2.16</span> ${var##pattern}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.17 -->
+      <a href="c2/var-remove-pattern-shortest.html" class="lesson-link" tabindex="0">
+        <span class="number">2.17</span> ${var%%pattern}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.18 -->
+      <a href="c2/var-remove-prefix-longest.html" class="lesson-link" tabindex="0">
+        <span class="number">2.18</span> ${var#pattern}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.19 -->
+      <a href="c2/var-remove-prefix-shortest.html" class="lesson-link" tabindex="0">
+        <span class="number">2.19</span> ${var%pattern}
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.20 -->
+      <a href="c2/arithmetic.html" class="lesson-link" tabindex="0">
+        <span class="number">2.20</span> $((…))
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.21 -->
+      <a href="c2/arithmetic-increment.html" class="lesson-link" tabindex="0">
+        <span class="number">2.21</span> $((var + 1))
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.22 -->
+      <a href="c2/command-substitution.html" class="lesson-link" tabindex="0">
+        <span class="number">2.22</span> $(…)
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.23 -->
+      <a href="c2/ellipsis.html" class="lesson-link" tabindex="0">
+        <span class="number">2.23</span> …
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.24 -->
+      <a href="c2/question-mark.html" class="lesson-link" tabindex="0">
+        <span class="number">2.24</span> ?
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.25 -->
+      <a href="c2/square-brackets.html" class="lesson-link" tabindex="0">
+        <span class="number">2.25</span> [ … ]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.26 -->
+      <a href="c2/double-square-brackets.html" class="lesson-link" tabindex="0">
+        <span class="number">2.26</span> [[ … ]]
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 2.27 -->
+      <a href="c2/double-parentheses.html" class="lesson-link" tabindex="0">
+        <span class="number">2.27</span> (( … ))
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 3 -->
+<section class="accordion" aria-label="File & Directory Management">
+  <div class="accordion-item" id="cat-3">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-3" data-target="content-3">
+      <span class="number">3.</span>
+      <span class="title">File & Directory Management</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-3" role="region" aria-labelledby="cat-3">
+
+      <!-- Subcategory 3.1 -->
+      <a href="c3/cd.html" class="lesson-link" tabindex="0">
+        <span class="number">3.1</span> cd
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.2 -->
+      <a href="c3/cd-home.html" class="lesson-link" tabindex="0">
+        <span class="number">3.2</span> cd ~
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.3 -->
+      <a href="c3/cd-back.html" class="lesson-link" tabindex="0">
+        <span class="number">3.3</span> cd -
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.4 -->
+      <a href="c3/ls.html" class="lesson-link" tabindex="0">
+        <span class="number">3.4</span> ls
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.5 -->
+      <a href="c3/ls-l.html" class="lesson-link" tabindex="0">
+        <span class="number">3.5</span> ls -l
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.6 -->
+      <a href="c3/ls-a.html" class="lesson-link" tabindex="0">
+        <span class="number">3.6</span> ls -a
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.7 -->
+      <a href="c3/ls-lh.html" class="lesson-link" tabindex="0">
+        <span class="number">3.7</span> ls -lh
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.8 -->
+      <a href="c3/tree.html" class="lesson-link" tabindex="0">
+        <span class="number">3.8</span> tree
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.9 -->
+      <a href="c3/mkdir.html" class="lesson-link" tabindex="0">
+        <span class="number">3.9</span> mkdir
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.10 -->
+      <a href="c3/rmdir.html" class="lesson-link" tabindex="0">
+        <span class="number">3.10</span> rmdir
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.11 -->
+      <a href="c3/touch.html" class="lesson-link" tabindex="0">
+        <span class="number">3.11</span> touch
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.12 -->
+      <a href="c3/cp.html" class="lesson-link" tabindex="0">
+        <span class="number">3.12</span> cp
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.13 -->
+      <a href="c3/mv.html" class="lesson-link" tabindex="0">
+        <span class="number">3.13</span> mv
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.14 -->
+      <a href="c3/rm.html" class="lesson-link" tabindex="0">
+        <span class="number">3.14</span> rm
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.15 -->
+      <a href="c3/ln.html" class="lesson-link" tabindex="0">
+        <span class="number">3.15</span> ln
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.16 -->
+      <a href="c3/basename.html" class="lesson-link" tabindex="0">
+        <span class="number">3.16</span> basename
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.17 -->
+      <a href="c3/dirname.html" class="lesson-link" tabindex="0">
+        <span class="number">3.17</span> dirname
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.18 -->
+      <a href="c3/realpath.html" class="lesson-link" tabindex="0">
+        <span class="number">3.18</span> realpath
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.19 -->
+      <a href="c3/find.html" class="lesson-link" tabindex="0">
+        <span class="number">3.19</span> find
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.20 -->
+      <a href="c3/locate.html" class="lesson-link" tabindex="0">
+        <span class="number">3.20</span> locate
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.21 -->
+      <a href="c3/which.html" class="lesson-link" tabindex="0">
+        <span class="number">3.21</span> which
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.22 -->
+      <a href="c3/whereis.html" class="lesson-link" tabindex="0">
+        <span class="number">3.22</span> whereis
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 3.23 -->
+      <a href="c3/file.html" class="lesson-link" tabindex="0">
+        <span class="number">3.23</span> file
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Category 4 -->
+<section class="accordion" aria-label="Viewing & Searching Files">
+  <div class="accordion-item" id="cat-4">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-4" data-target="content-4">
+      <span class="number">4.</span>
+      <span class="title">Viewing & Searching Files</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-4" role="region" aria-labelledby="cat-4">
+
+      <!-- Subcategory 4.1 -->
+      <a href="c4/cat.html" class="lesson-link" tabindex="0">
+        <span class="number">4.1</span> cat
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.2 -->
+      <a href="c4/less.html" class="lesson-link" tabindex="0">
+        <span class="number">4.2</span> less
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.3 -->
+      <a href="c4/more.html" class="lesson-link" tabindex="0">
+        <span class="number">4.3</span> more
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.4 -->
+      <a href="c4/head.html" class="lesson-link" tabindex="0">
+        <span class="number">4.4</span> head
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.5 -->
+      <a href="c4/tail.html" class="lesson-link" tabindex="0">
+        <span class="number">4.5</span> tail
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.6 -->
+      <a href="c4/grep.html" class="lesson-link" tabindex="0">
+        <span class="number">4.6</span> grep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.7 -->
+      <a href="c4/egrep.html" class="lesson-link" tabindex="0">
+        <span class="number">4.7</span> egrep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.8 -->
+      <a href="c4/fgrep.html" class="lesson-link" tabindex="0">
+        <span class="number">4.8</span> fgrep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.9 -->
+      <a href="c4/zgrep.html" class="lesson-link" tabindex="0">
+        <span class="number">4.9</span> zgrep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.10 -->
+      <a href="c4/strings.html" class="lesson-link" tabindex="0">
+        <span class="number">4.10</span> strings
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.11 -->
+      <a href="c4/od.html" class="lesson-link" tabindex="0">
+        <span class="number">4.11</span> od
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.12 -->
+      <a href="c4/hexdump.html" class="lesson-link" tabindex="0">
+        <span class="number">4.12</span> hexdump
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.13 -->
+      <a href="c4/wc.html" class="lesson-link" tabindex="0">
+        <span class="number">4.13</span> wc
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.14 -->
+      <a href="c4/cut.html" class="lesson-link" tabindex="0">
+        <span class="number">4.14</span> cut
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.15 -->
+      <a href="c4/paste.html" class="lesson-link" tabindex="0">
+        <span class="number">4.15</span> paste
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.16 -->
+      <a href="c4/sort.html" class="lesson-link" tabindex="0">
+        <span class="number">4.16</span> sort
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.17 -->
+      <a href="c4/uniq.html" class="lesson-link" tabindex="0">
+        <span class="number">4.17</span> uniq
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.18 -->
+      <a href="c4/comm.html" class="lesson-link" tabindex="0">
+        <span class="number">4.18</span> comm
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.19 -->
+      <a href="c4/diff.html" class="lesson-link" tabindex="0">
+        <span class="number">4.19</span> diff
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 4.20 -->
+      <a href="c4/cmp.html" class="lesson-link" tabindex="0">
+        <span class="number">4.20</span> cmp
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Category 5 -->
+<section class="accordion" aria-label="Redirection & Pipes">
+  <div class="accordion-item" id="cat-5">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-5" data-target="content-5">
+      <span class="number">5.</span>
+      <span class="title">Redirection & Pipes</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-5" role="region" aria-labelledby="cat-5">
+
+      <!-- Subcategory 5.1 -->
+      <a href="c5/input-redirection.html" class="lesson-link" tabindex="0">
+        <span class="number">5.1</span> &lt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.2 -->
+      <a href="c5/here-document.html" class="lesson-link" tabindex="0">
+        <span class="number">5.2</span> &lt;&lt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.3 -->
+      <a href="c5/here-string.html" class="lesson-link" tabindex="0">
+        <span class="number">5.3</span> &lt;&lt;&lt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.4 -->
+      <a href="c5/pipe.html" class="lesson-link" tabindex="0">
+        <span class="number">5.4</span> |
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.5 -->
+      <a href="c5/tee.html" class="lesson-link" tabindex="0">
+        <span class="number">5.5</span> tee
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.6 -->
+      <a href="c5/background.html" class="lesson-link" tabindex="0">
+        <span class="number">5.6</span> &
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.7 -->
+      <a href="c5/stderr.html" class="lesson-link" tabindex="0">
+        <span class="number">5.7</span> 2&gt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.8 -->
+      <a href="c5/stderr-stdout.html" class="lesson-link" tabindex="0">
+        <span class="number">5.8</span> 2&gt;&amp;1
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.9 -->
+      <a href="c5/all-redirect.html" class="lesson-link" tabindex="0">
+        <span class="number">5.9</span> &amp;&gt;
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.10 -->
+      <a href="c5/exec.html" class="lesson-link" tabindex="0">
+        <span class="number">5.10</span> exec
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.11 -->
+      <a href="c5/xargs.html" class="lesson-link" tabindex="0">
+        <span class="number">5.11</span> xargs
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.12 -->
+      <a href="c5/env.html" class="lesson-link" tabindex="0">
+        <span class="number">5.12</span> env
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 5.13 -->
+      <a href="c5/export.html" class="lesson-link" tabindex="0">
+        <span class="number">5.13</span> export
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 6 -->
+<section class="accordion" aria-label="Process & Job Control">
+  <div class="accordion-item" id="cat-6">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-6" data-target="content-6">
+      <span class="number">6.</span>
+      <span class="title">Process & Job Control</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-6" role="region" aria-labelledby="cat-6">
+
+      <!-- Subcategory 6.1 -->
+      <a href="c6/jobs.html" class="lesson-link" tabindex="0">
+        <span class="number">6.1</span> jobs
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.2 -->
+      <a href="c6/fg.html" class="lesson-link" tabindex="0">
+        <span class="number">6.2</span> fg
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.3 -->
+      <a href="c6/bg.html" class="lesson-link" tabindex="0">
+        <span class="number">6.3</span> bg
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.4 -->
+      <a href="c6/kill.html" class="lesson-link" tabindex="0">
+        <span class="number">6.4</span> kill
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.5 -->
+      <a href="c6/kill-9.html" class="lesson-link" tabindex="0">
+        <span class="number">6.5</span> kill -9
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.6 -->
+      <a href="c6/pkill.html" class="lesson-link" tabindex="0">
+        <span class="number">6.6</span> pkill
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.7 -->
+      <a href="c6/pgrep.html" class="lesson-link" tabindex="0">
+        <span class="number">6.7</span> pgrep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.8 -->
+      <a href="c6/disown.html" class="lesson-link" tabindex="0">
+        <span class="number">6.8</span> disown
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.9 -->
+      <a href="c6/wait.html" class="lesson-link" tabindex="0">
+        <span class="number">6.9</span> wait
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.10 -->
+      <a href="c6/ps.html" class="lesson-link" tabindex="0">
+        <span class="number">6.10</span> ps
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.11 -->
+      <a href="c6/top.html" class="lesson-link" tabindex="0">
+        <span class="number">6.11</span> top
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.12 -->
+      <a href="c6/htop.html" class="lesson-link" tabindex="0">
+        <span class="number">6.12</span> htop
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.13 -->
+      <a href="c6/nice.html" class="lesson-link" tabindex="0">
+        <span class="number">6.13</span> nice
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.14 -->
+      <a href="c6/renice.html" class="lesson-link" tabindex="0">
+        <span class="number">6.14</span> renice
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 6.15 -->
+      <a href="c6/nohup.html" class="lesson-link" tabindex="0">
+        <span class="number">6.15</span> nohup
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 7 -->
+<section class="accordion" aria-label="System Information & Monitoring">
+  <div class="accordion-item" id="cat-7">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-7" data-target="content-7">
+      <span class="number">7.</span>
+      <span class="title">System Information & Monitoring</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-7" role="region" aria-labelledby="cat-7">
+
+      <!-- Subcategory 7.1 -->
+      <a href="c7/uptime.html" class="lesson-link" tabindex="0">
+        <span class="number">7.1</span> uptime
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.2 -->
+      <a href="c7/w.html" class="lesson-link" tabindex="0">
+        <span class="number">7.2</span> w
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.3 -->
+      <a href="c7/free.html" class="lesson-link" tabindex="0">
+        <span class="number">7.3</span> free
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.4 -->
+      <a href="c7/df.html" class="lesson-link" tabindex="0">
+        <span class="number">7.4</span> df
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.5 -->
+      <a href="c7/du.html" class="lesson-link" tabindex="0">
+        <span class="number">7.5</span> du
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.6 -->
+      <a href="c7/lscpu.html" class="lesson-link" tabindex="0">
+        <span class="number">7.6</span> lscpu
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.7 -->
+      <a href="c7/lsblk.html" class="lesson-link" tabindex="0">
+        <span class="number">7.7</span> lsblk
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.8 -->
+      <a href="c7/blkid.html" class="lesson-link" tabindex="0">
+        <span class="number">7.8</span> blkid
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.9 -->
+      <a href="c7/dmesg.html" class="lesson-link" tabindex="0">
+        <span class="number">7.9</span> dmesg
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.10 -->
+      <a href="c7/vmstat.html" class="lesson-link" tabindex="0">
+        <span class="number">7.10</span> vmstat
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.11 -->
+      <a href="c7/iostat.html" class="lesson-link" tabindex="0">
+        <span class="number">7.11</span> iostat
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.12 -->
+      <a href="c7/lsof.html" class="lesson-link" tabindex="0">
+        <span class="number">7.12</span> lsof
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.13 -->
+      <a href="c7/netstat.html" class="lesson-link" tabindex="0">
+        <span class="number">7.13</span> netstat
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.14 -->
+      <a href="c7/ss.html" class="lesson-link" tabindex="0">
+        <span class="number">7.14</span> ss
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.15 -->
+      <a href="c7/lspci.html" class="lesson-link" tabindex="0">
+        <span class="number">7.15</span> lspci
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 7.16 -->
+      <a href="c7/lsusb.html" class="lesson-link" tabindex="0">
+        <span class="number">7.16</span> lsusb
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 8 -->
+<section class="accordion" aria-label="Package Management">
+  <div class="accordion-item" id="cat-8">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-8" data-target="content-8">
+      <span class="number">8.</span>
+      <span class="title">Package Management</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-8" role="region" aria-labelledby="cat-8">
+
+      <!-- Subcategory 8.1 -->
+      <a href="c8/apt.html" class="lesson-link" tabindex="0">
+        <span class="number">8.1</span> apt
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.2 -->
+      <a href="c8/apt-get.html" class="lesson-link" tabindex="0">
+        <span class="number">8.2</span> apt-get
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.3 -->
+      <a href="c8/dpkg.html" class="lesson-link" tabindex="0">
+        <span class="number">8.3</span> dpkg
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.4 -->
+      <a href="c8/yum.html" class="lesson-link" tabindex="0">
+        <span class="number">8.4</span> yum
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.5 -->
+      <a href="c8/dnf.html" class="lesson-link" tabindex="0">
+        <span class="number">8.5</span> dnf
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.6 -->
+      <a href="c8/rpm.html" class="lesson-link" tabindex="0">
+        <span class="number">8.6</span> rpm
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.7 -->
+      <a href="c8/pacman.html" class="lesson-link" tabindex="0">
+        <span class="number">8.7</span> pacman
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.8 -->
+      <a href="c8/zypper.html" class="lesson-link" tabindex="0">
+        <span class="number">8.8</span> zypper
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.9 -->
+      <a href="c8/snap.html" class="lesson-link" tabindex="0">
+        <span class="number">8.9</span> snap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 8.10 -->
+      <a href="c8/flatpak.html" class="lesson-link" tabindex="0">
+        <span class="number">8.10</span> flatpak
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Category 9 -->
+<section class="accordion" aria-label="Networking & Remote Access">
+  <div class="accordion-item" id="cat-9">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-9" data-target="content-9">
+      <span class="number">9.</span>
+      <span class="title">Networking & Remote Access</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-9" role="region" aria-labelledby="cat-9">
+
+      <!-- Subcategory 9.1 -->
+      <a href="c9/ping.html" class="lesson-link" tabindex="0">
+        <span class="number">9.1</span> ping
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.2 -->
+      <a href="c9/traceroute.html" class="lesson-link" tabindex="0">
+        <span class="number">9.2</span> traceroute
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.3 -->
+      <a href="c9/curl.html" class="lesson-link" tabindex="0">
+        <span class="number">9.3</span> curl
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.4 -->
+      <a href="c9/wget.html" class="lesson-link" tabindex="0">
+        <span class="number">9.4</span> wget
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.5 -->
+      <a href="c9/ssh.html" class="lesson-link" tabindex="0">
+        <span class="number">9.5</span> ssh
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.6 -->
+      <a href="c9/scp.html" class="lesson-link" tabindex="0">
+        <span class="number">9.6</span> scp
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.7 -->
+      <a href="c9/rsync.html" class="lesson-link" tabindex="0">
+        <span class="number">9.7</span> rsync
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.8 -->
+      <a href="c9/ftp.html" class="lesson-link" tabindex="0">
+        <span class="number">9.8</span> ftp
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.9 -->
+      <a href="c9/sftp.html" class="lesson-link" tabindex="0">
+        <span class="number">9.9</span> sftp
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.10 -->
+      <a href="c9/netcat.html" class="lesson-link" tabindex="0">
+        <span class="number">9.10</span> netcat
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.11 -->
+      <a href="c9/ifconfig.html" class="lesson-link" tabindex="0">
+        <span class="number">9.11</span> ifconfig
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.12 -->
+      <a href="c9/ip.html" class="lesson-link" tabindex="0">
+        <span class="number">9.12</span> ip
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.13 -->
+      <a href="c9/nslookup.html" class="lesson-link" tabindex="0">
+        <span class="number">9.13</span> nslookup
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.14 -->
+      <a href="c9/dig.html" class="lesson-link" tabindex="0">
+        <span class="number">9.14</span> dig
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.15 -->
+      <a href="c9/host.html" class="lesson-link" tabindex="0">
+        <span class="number">9.15</span> host
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.16 -->
+      <a href="c9/arp.html" class="lesson-link" tabindex="0">
+        <span class="number">9.16</span> arp
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.17 -->
+      <a href="c9/route.html" class="lesson-link" tabindex="0">
+        <span class="number">9.17</span> route
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.18 -->
+      <a href="c9/iptables.html" class="lesson-link" tabindex="0">
+        <span class="number">9.18</span> iptables
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.19 -->
+      <a href="c9/ufw.html" class="lesson-link" tabindex="0">
+        <span class="number">9.19</span> ufw
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 9.20 -->
+      <a href="c9/nmap.html" class="lesson-link" tabindex="0">
+        <span class="number">9.20</span> nmap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 10 -->
+<section class="accordion" aria-label="Archiving & Compression">
+  <div class="accordion-item" id="cat-10">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-10" data-target="content-10">
+      <span class="number">10.</span>
+      <span class="title">Archiving & Compression</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-10" role="region" aria-labelledby="cat-10">
+
+      <!-- Subcategory 10.1 -->
+      <a href="c10/tar.html" class="lesson-link" tabindex="0">
+        <span class="number">10.1</span> tar
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.2 -->
+      <a href="c10/tar-czf.html" class="lesson-link" tabindex="0">
+        <span class="number">10.2</span> tar -czf
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.3 -->
+      <a href="c10/tar-xzf.html" class="lesson-link" tabindex="0">
+        <span class="number">10.3</span> tar -xzf
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.4 -->
+      <a href="c10/gzip.html" class="lesson-link" tabindex="0">
+        <span class="number">10.4</span> gzip
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.5 -->
+      <a href="c10/gunzip.html" class="lesson-link" tabindex="0">
+        <span class="number">10.5</span> gunzip
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.6 -->
+      <a href="c10/bzip2.html" class="lesson-link" tabindex="0">
+        <span class="number">10.6</span> bzip2
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.7 -->
+      <a href="c10/bunzip2.html" class="lesson-link" tabindex="0">
+        <span class="number">10.7</span> bunzip2
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.8 -->
+      <a href="c10/xz.html" class="lesson-link" tabindex="0">
+        <span class="number">10.8</span> xz
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.9 -->
+      <a href="c10/unxz.html" class="lesson-link" tabindex="0">
+        <span class="number">10.9</span> unxz
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.10 -->
+      <a href="c10/zip.html" class="lesson-link" tabindex="0">
+        <span class="number">10.10</span> zip
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.11 -->
+      <a href="c10/unzip.html" class="lesson-link" tabindex="0">
+        <span class="number">10.11</span> unzip
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.12 -->
+      <a href="c10/7z.html" class="lesson-link" tabindex="0">
+        <span class="number">10.12</span> 7z
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.13 -->
+      <a href="c10/7za.html" class="lesson-link" tabindex="0">
+        <span class="number">10.13</span> 7za
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 10.14 -->
+      <a href="c10/cpio.html" class="lesson-link" tabindex="0">
+        <span class="number">10.14</span> cpio
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 11 -->
+<section class="accordion" aria-label="Advanced Bash Scripting">
+  <div class="accordion-item" id="cat-11">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-11" data-target="content-11">
+      <span class="number">11.</span>
+      <span class="title">Advanced Bash Scripting</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-11" role="region" aria-labelledby="cat-11">
+
+      <!-- Subcategory 11.1 -->
+      <a href="c11/if-then-else.html" class="lesson-link" tabindex="0">
+        <span class="number">11.1</span> if … then … else … fi
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.2 -->
+      <a href="c11/elif.html" class="lesson-link" tabindex="0">
+        <span class="number">11.2</span> elif
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.3 -->
+      <a href="c11/case-esac.html" class="lesson-link" tabindex="0">
+        <span class="number">11.3</span> case … esac
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.4 -->
+      <a href="c11/for.html" class="lesson-link" tabindex="0">
+        <span class="number">11.4</span> for
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.5 -->
+      <a href="c11/while.html" class="lesson-link" tabindex="0">
+        <span class="number">11.5</span> while
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.6 -->
+      <a href="c11/until.html" class="lesson-link" tabindex="0">
+        <span class="number">11.6</span> until
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.7 -->
+      <a href="c11/select.html" class="lesson-link" tabindex="0">
+        <span class="number">11.7</span> select
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.8 -->
+      <a href="c11/break.html" class="lesson-link" tabindex="0">
+        <span class="number">11.8</span> break
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.9 -->
+      <a href="c11/continue.html" class="lesson-link" tabindex="0">
+        <span class="number">11.9</span> continue
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.10 -->
+      <a href="c11/function.html" class="lesson-link" tabindex="0">
+        <span class="number">11.10</span> function
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.11 -->
+      <a href="c11/name.html" class="lesson-link" tabindex="0">
+        <span class="number">11.11</span> name()
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.12 -->
+      <a href="c11/return.html" class="lesson-link" tabindex="0">
+        <span class="number">11.12</span> return
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.13 -->
+      <a href="c11/shift.html" class="lesson-link" tabindex="0">
+        <span class="number">11.13</span> shift
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.14 -->
+      <a href="c11/getopts.html" class="lesson-link" tabindex="0">
+        <span class="number">11.14</span> getopts
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.15 -->
+      <a href="c11/trap.html" class="lesson-link" tabindex="0">
+        <span class="number">11.15</span> trap
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.16 -->
+      <a href="c11/eval.html" class="lesson-link" tabindex="0">
+        <span class="number">11.16</span> eval
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.17 -->
+      <a href="c11/readonly.html" class="lesson-link" tabindex="0">
+        <span class="number">11.17</span> readonly
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.18 -->
+      <a href="c11/declare.html" class="lesson-link" tabindex="0">
+        <span class="number">11.18</span> declare
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.19 -->
+      <a href="c11/typeset.html" class="lesson-link" tabindex="0">
+        <span class="number">11.19</span> typeset
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.20 -->
+      <a href="c11/local.html" class="lesson-link" tabindex="0">
+        <span class="number">11.20</span> local
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.21 -->
+      <a href="c11/unset.html" class="lesson-link" tabindex="0">
+        <span class="number">11.21</span> unset
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.22 -->
+      <a href="c11/mapfile.html" class="lesson-link" tabindex="0">
+        <span class="number">11.22</span> mapfile
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.23 -->
+      <a href="c11/readarray.html" class="lesson-link" tabindex="0">
+        <span class="number">11.23</span> readarray
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 11.24 -->
+      <a href="c11/read.html" class="lesson-link" tabindex="0">
+        <span class="number">11.24</span> read
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Category 12 -->
+<section class="accordion" aria-label="Advanced Linux Tools & Utilities">
+  <div class="accordion-item" id="cat-12">
+    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-12" data-target="content-12">
+      <span class="number">12.</span>
+      <span class="title">Advanced Linux Tools & Utilities</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="accordion-content" id="content-12" role="region" aria-labelledby="cat-12">
+
+      <!-- Subcategory 12.1 -->
+      <a href="c12/sed.html" class="lesson-link" tabindex="0">
+        <span class="number">12.1</span> sed
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.2 -->
+      <a href="c12/awk.html" class="lesson-link" tabindex="0">
+        <span class="number">12.2</span> awk
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.3 -->
+      <a href="c12/tr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.3</span> tr
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.4 -->
+      <a href="c12/head.html" class="lesson-link" tabindex="0">
+        <span class="number">12.4</span> head
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.5 -->
+      <a href="c12/tail.html" class="lesson-link" tabindex="0">
+        <span class="number">12.5</span> tail
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.6 -->
+      <a href="c12/cut.html" class="lesson-link" tabindex="0">
+        <span class="number">12.6</span> cut
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.7 -->
+      <a href="c12/paste.html" class="lesson-link" tabindex="0">
+        <span class="number">12.7</span> paste
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.8 -->
+      <a href="c12/join.html" class="lesson-link" tabindex="0">
+        <span class="number">12.8</span> join
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.9 -->
+      <a href="c12/sort.html" class="lesson-link" tabindex="0">
+        <span class="number">12.9</span> sort
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.10 -->
+      <a href="c12/uniq.html" class="lesson-link" tabindex="0">
+        <span class="number">12.10</span> uniq
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.11 -->
+      <a href="c12/comm.html" class="lesson-link" tabindex="0">
+        <span class="number">12.11</span> comm
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.12 -->
+      <a href="c12/grep.html" class="lesson-link" tabindex="0">
+        <span class="number">12.12</span> grep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.13 -->
+      <a href="c12/egrep.html" class="lesson-link" tabindex="0">
+        <span class="number">12.13</span> egrep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.14 -->
+      <a href="c12/fgrep.html" class="lesson-link" tabindex="0">
+        <span class="number">12.14</span> fgrep
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.15 -->
+      <a href="c12/split.html" class="lesson-link" tabindex="0">
+        <span class="number">12.15</span> split
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.16 -->
+      <a href="c12/csplit.html" class="lesson-link" tabindex="0">
+        <span class="number">12.16</span> csplit
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.17 -->
+      <a href="c12/pr.html" class="lesson-link" tabindex="0">
+        <span class="number">12.17</span> pr
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.18 -->
+      <a href="c12/tee.html" class="lesson-link" tabindex="0">
+        <span class="number">12.18</span> tee
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.19 -->
+      <a href="c12/pv.html" class="lesson-link" tabindex="0">
+        <span class="number">12.19</span> pv
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.20 -->
+      <a href="c12/watch.html" class="lesson-link" tabindex="0">
+        <span class="number">12.20</span> watch
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.21 -->
+      <a href="c12/cron.html" class="lesson-link" tabindex="0">
+        <span class="number">12.21</span> cron
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.22 -->
+      <a href="c12/crontab.html" class="lesson-link" tabindex="0">
+        <span class="number">12.22</span> crontab
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.23 -->
+      <a href="c12/at.html" class="lesson-link" tabindex="0">
+        <span class="number">12.23</span> at
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.24 -->
+      <a href="c12/systemctl.html" class="lesson-link" tabindex="0">
+        <span class="number">12.24</span> systemctl
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.25 -->
+      <a href="c12/journalctl.html" class="lesson-link" tabindex="0">
+        <span class="number">12.25</span> journalctl
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.26 -->
+      <a href="c12/logger.html" class="lesson-link" tabindex="0">
+        <span class="number">12.26</span> logger
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.27 -->
+      <a href="c12/screen.html" class="lesson-link" tabindex="0">
+        <span class="number">12.27</span> screen
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.28 -->
+      <a href="c12/tmux.html" class="lesson-link" tabindex="0">
+        <span class="number">12.28</span> tmux
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.29 -->
+      <a href="c12/notify-send.html" class="lesson-link" tabindex="0">
+        <span class="number">12.29</span> notify-send
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+      <!-- Subcategory 12.30 -->
+      <a href="c12/yes.html" class="lesson-link" tabindex="0">
+        <span class="number">12.30</span> yes
+        <span class="checkmark" aria-hidden="true" hidden>✔</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 Command Line Learning. All rights reserved.
+  </footer>
+
+  
+<script src="../commonsindex/commonindex.js"></script>
+  
+</body>
+</html>
